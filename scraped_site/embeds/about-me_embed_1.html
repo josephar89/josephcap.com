@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+  :root {
+    --bg-main: #ffffff;
+    --bg-sidebar: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent: #2563eb; 
+    --accent-light: #eff6ff;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background-color: transparent; 
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 15px; 
+  }
+
+  .resume-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--bg-main);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .mobile-only { display: none; }
+  .desktop-only { display: block; }
+
+  .header-name {
+    margin-bottom: 25px;
+  }
+  .header-name h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: var(--text-main);
+  }
+  
+  .header-name h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  /* --- LEFT SIDEBAR --- */
+  .sidebar {
+    background-color: var(--bg-sidebar);
+    padding: 40px 30px;
+    border-right: 1px solid var(--border);
+  }
+
+  .profile-pic-container {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    padding: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .contact-info { margin-bottom: 30px; } 
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .contact-item i { width: 25px; color: var(--accent); font-size: 1.1rem; }
+  .contact-item a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
+  .contact-item a:hover { color: var(--accent); }
+
+  /* --- DOWNLOAD BUTTON --- */
+  .download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  }
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+    color: #ffffff;
+  }
+  .download-btn i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+
+  .section-title-side {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+  }
+
+  .skills-wrapper { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .skill-badge {
+    background-color: var(--accent-light);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
+
+  .edu-item { margin-bottom: 18px; }
+  .edu-degree { font-size: 0.9rem; font-weight: 700; color: var(--text-main); }
+  .edu-school { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+  .edu-year { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+
+  /* --- RIGHT MAIN CONTENT --- */
+  .main-content {
+    padding: 50px 40px;
+    background-color: var(--bg-main);
+  }
+
+  .summary {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .section-title-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 10px;
+  }
+  .section-title-main i { margin-right: 12px; color: var(--accent); }
+
+  .exp-item {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .exp-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .exp-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+  .exp-company { font-size: 0.95rem; color: var(--accent); font-weight: 600; }
+  .exp-date { font-size: 0.85rem; color: var(--text-muted); text-align: right; font-weight: 600; }
+  
+  .exp-details { list-style-type: none; }
+  .exp-details li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+  }
+  .exp-details li::before {
+    content: "▹";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .cert-item {
+    background-color: var(--bg-card);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    transition: border-color 0.3s;
+  }
+  .cert-item:hover { border-color: var(--accent); color: var(--text-main); }
+  .cert-item i { color: #f59e0b; margin-right: 12px; font-size: 1.3rem; }
+
+  /* --- STRICT RESPONSIVE FIXES FOR GOOGLE SITES IFRAME MOBILE --- */
+  @media (max-width: 850px) {
+    html, body { padding: 0 !important; margin: 0; }
+    
+    .resume-container { 
+      grid-template-columns: 1fr; 
+      border-radius: 0;
+      box-shadow: none; 
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+
+    .mobile-only { 
+      display: block; 
+      background-color: var(--bg-sidebar); 
+      text-align: center;
+      padding: 35px 20px 0px 20px;
+    }
+    .desktop-only { display: none !important; }
+
+    .header-name h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 8px;}
+    
+    .header-name h2 { font-size: 0.9rem; line-height: 1.4; letter-spacing: 0px;}
+    
+    .sidebar { 
+      border-right: none; 
+      border-bottom: 1px solid var(--border); 
+      padding: 20px 20px 40px 20px;
+    }
+    .profile-pic-container { margin-bottom: 15px; }
+
+    .main-content { padding: 30px 20px; }
+    .exp-header { flex-direction: column; }
+    .exp-date { text-align: left; margin-top: 5px; }
+    .cert-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="resume-container">
+  
+  <!-- MOBILE HEADER -->
+  <div class="header-name mobile-only">
+    <h1>Joseph Arputha Raj V</h1>
+    <h2>AI Integration Specialist &nbsp;&bull;&nbsp; Filmmaker &nbsp;&bull;&nbsp; Capuchin Priest</h2>
+  </div>
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+    <div class="profile-pic-container">
+      <img src="https://media.licdn.com/dms/image/v2/D5603AQE-yLot_VMLjA/profile-displayphoto-crop_800_800/B56Z4bAj_vGoAI-/0/1778569593217?e=1781136000&v=beta&t=c6_ebiFY54B6uqtnSGTY-5t_6g7Ymb7wnIveQrY7xQE" alt="Joseph Arputha Raj V" class="profile-pic" onerror="this.src='https://via.placeholder.com/160/ffffff/2563eb?text=JARV'">
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Paris, FR / Tamil Nadu, IN</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:josephar89@gmail.com">josephar89@gmail.com</a></div>
+      <div class="contact-item"><i class="fas fa-phone"></i> +91 86376 68430</div>
+      <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://www.josephcap.com" target="_blank">josephcap.com</a></div>
+      <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/josephar89" target="_blank">linkedin.com/in/josephar89</a></div>
+      <div class="contact-item"><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@Fr.JosephArRa" target="_blank">@Fr.JosephArRa</a></div>
+    </div>
+
+    <a href="#" class="download-btn" target="_blank">
+      <i class="fas fa-download"></i> Download CV (PDF)
+    </a>
+
+    <h3 class="section-title-side">Core Skills</h3>
+    <div class="skills-wrapper">
+      <span class="skill-badge">Generative AI</span>
+      <span class="skill-badge">Systems Integration</span>
+      <span class="skill-badge">Film Direction</span>
+      <span class="skill-badge">EdTech Logistics</span>
+      <span class="skill-badge">Audio Engineering</span>
+      <span class="skill-badge">Music Composing</span>
+      <span class="skill-badge">Database Admin</span>
+      <span class="skill-badge">Applied Philosophy</span>
+    </div>
+
+    <h3 class="section-title-side">Education Stack</h3>
+    
+    <div class="edu-item">
+      <div class="edu-degree">MA Cinema Arts & Audiovisual</div>
+      <div class="edu-school">DBIMA, Paris</div>
+      <div class="edu-year">2025 - 2027</div>
+    </div>
+    
+    <div class="edu-item">
+      <div class="edu-degree">MSc Counseling & Psychotherapy</div>
+      <div class="edu-school">Periyar University</div>
+      <div class="edu-year">2023 - 2024</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Diploma in Sound Engineering</div>
+      <div class="edu-school">Bridge Academy</div>
+      <div class="edu-year">2022</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">BA & MA English & MA History</div>
+      <div class="edu-school">Annamalai University</div>
+      <div class="edu-year">2014 - 2025</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Theology & Philosophy</div>
+      <div class="edu-school">Ecclesial Studies</div>
+      <div class="edu-year">2013 - 2020</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT MAIN CONTENT -->
+  <div class="main-content">
+    
+    <!-- DESKTOP HEADER -->
+    <div class="header-name desktop-only">
+      <h1>Joseph Arputha Raj V</h1>
+      <h2>AI Integration Specialist &nbsp;&bull;&nbsp; Filmmaker &nbsp;&bull;&nbsp; Capuchin Priest</h2>
+    </div>
+
+    <div class="summary">
+      A modern Capuchin missionary, filmmaker, and Master AI Trainer candidate dedicated to bridging the gap between traditional storytelling and Generative AI. With a background spanning 14 years of theological formation, managing EdTech logistics for 50,000+ users, and leading digital migrations, I empower individuals to harness AI for impactful communication. My mission is to democratize technical literacy at scale, fostering deeper engagement and ethical innovation in the digital age.
+    </div>
+
+    <h3 class="section-title-main"><i class="fas fa-briefcase"></i> High-Impact Experience</h3>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Global AI Educator & Workshop Facilitator</div>
+          <div class="exp-company">Independent Initiative</div>
+        </div>
+        <div class="exp-date">Apr 2025 - Present</div>
+      </div>
+      <ul class="exp-details">
+        <li>Designed and facilitated a global AI literacy initiative, conducting 15+ specialized AI workshops across India, France, Italy, Paris and Cameroon.</li>
+        <li>Tailored "Train-the-Trainer" curriculums for diverse demographics, including PhD scholars, educators, and international community leaders.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Digital Communications & Web Admin</div>
+          <div class="exp-company">Amala Annai Capuchin Province</div>
+        </div>
+        <div class="exp-date">May 2020 - Present</div>
+      </div>
+      <ul class="exp-details">
+        <li>Engineered AI-assisted audio pipelines (vocal isolation, stem separation) to mass-scale 600+ Tamil tracks for "Vetrisaipadal", achieving 25,000+ views.</li>
+        <li>Architected the Malayadipatty Digital Archive, digitizing 350 years of mission history into a structured relational database.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Provincial Secretary (Digital Transformation)</div>
+          <div class="exp-company">Order of Friars Minor Capuchin</div>
+        </div>
+        <div class="exp-date">Apr 2023 - Dec 2024</div>
+      </div>
+      <ul class="exp-details">
+        <li>Led the end-to-end modernization of legacy records, digitizing and logically indexing over 50,000 pages of administrative files into a secure cloud system.</li>
+        <li>Oversaw physical construction of a modern archive facility with high-density shelving.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">EdTech Operations & Logistics Lead</div>
+          <div class="exp-company">Thalir Holistic Welfare Centre</div>
+        </div>
+        <div class="exp-date">Oct 2020 - Dec 2021</div>
+      </div>
+      <ul class="exp-details">
+        <li>Co-spearheaded crisis-era digital transformation, engineering backend infrastructure for 60+ online courses.</li>
+        <li>Onboarded and managed databases for over 50,000 global participants with zero-downtime under heavy traffic constraints.</li>
+      </ul>
+    </div>
+
+    <h3 class="section-title-main" style="margin-top: 40px;"><i class="fas fa-certificate"></i> IICT & Google Certifications</h3>
+    <div class="cert-grid">
+      <div class="cert-item"><i class="fas fa-award"></i> Google Prompting Essentials (Coursera)</div>
+      <div class="cert-item"><i class="fas fa-award"></i> Google AI Essentials (Coursera)</div>
+      <div class="cert-item"><i class="fas fa-award"></i> IICT AI Skills House Scholar</div>
+      <div class="cert-item"><i class="fas fa-award"></i> Gen AI: Beyond the Chatbot</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fr. Joseph Arputha Raj | Faith, Art & Science</title>
+    <!-- Pastoral Monastic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* PURE NATURALS, WOODS AND PARCHMENT PALETTE */
+            --bg-pure: #ffffff;
+            --bg-off: #fdfcf7; /* Monastic Parchment tint */
+            --bg-accent: #f7f3eb; /* Warm Wood Pulp */
+            
+            --capuchin-dark: #3a2517;     /* Deeper Hickory Bark */
+            --text-main: #4e4035;         /* Muted Walnut */
+            --text-accent: #925835;       /* Warm Terracotta / Franciscan Clay */
+            --gold-leaf: #ba8d42;         /* Monastic Gold highlights */
+            --green-leaf: #4f6f52;        /* Franciscan Olive Green */
+
+            /* THE NATURAL CORD (Textural beige/hemp variables) */
+            --cord-highlight: #f5ecd8;     
+            --cord-mid: #cfb186;           
+            --cord-dark: #b89366; 
+
+            --card-border: rgba(146, 88, 53, 0.18);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Ambient internal scrollbar styling (scoped to avoid double-scrollbars on main window) */
+        .drawer-body::-webkit-scrollbar,
+        .code-block::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .drawer-body::-webkit-scrollbar-track,
+        .code-block::-webkit-scrollbar-track {
+            background: var(--bg-off);
+        }
+        .drawer-body::-webkit-scrollbar-thumb,
+        .code-block::-webkit-scrollbar-thumb {
+            background: var(--cord-mid);
+            border: 2px solid var(--bg-off);
+            border-radius: 6px;
+        }
+        .drawer-body::-webkit-scrollbar-thumb:hover,
+        .code-block::-webkit-scrollbar-thumb:hover {
+            background: var(--cord-dark);
+        }
+
+        body {
+            margin: 0; padding: 0; overflow-x: hidden;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            background-color: var(--bg-pure);
+            color: var(--text-main); 
+            line-height: 1.8; -webkit-font-smoothing: antialiased;
+        }
+
+        /* Page Entrance Animation */
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .system-container { 
+            max-width: 1020px; 
+            margin: 0 auto; 
+            padding: 3rem 1.5rem 6rem;
+            animation: pageFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* -------------------------------------
+           0. DYNAMIC RESPONSIVE BANNER BLOCK
+        ------------------------------------- */
+        .banner-holder {
+            width: 100%; 
+            margin-bottom: 4rem;
+            position: relative;
+            /* Seamlessly integrated - removed borders, backgrounds, and shadows */
+            overflow: hidden; 
+        }
+
+        .banner-image {
+            display: block;
+            width: 100%;
+            height: auto; 
+            object-fit: contain;
+            transition: transform 0.8s ease;
+        }
+        
+        .banner-holder:hover .banner-image {
+            transform: scale(1.015);
+        }
+
+        .banner-glow {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 100px;
+            /* Matches the page's pure background for a seamless fade-out */
+            background: linear-gradient(to top, var(--bg-pure), transparent);
+            pointer-events: none;
+        }
+
+        /* -------------------------------------
+           1. THE IDENTITY & GIF ANCHOR (Warm wood structure)
+        ------------------------------------- */
+        header { 
+            text-align: center; 
+            margin-bottom: 4rem; 
+            position: relative; 
+            z-index: 10;
+        }
+
+        .vow-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 14px;
+            border-radius: 30px;
+            background-color: var(--bg-accent);
+            border: 1px solid var(--card-border);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.8rem; 
+            font-weight: 700; 
+            color: var(--capuchin-dark); 
+            margin: 0 0 10px 0; 
+            letter-spacing: -0.5px;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        .header-title:hover {
+            transform: scale(1.03);
+            color: var(--text-accent);
+            text-shadow: 0 4px 15px rgba(146, 88, 53, 0.25);
+        }
+
+        .header-subtitle {
+            font-size: 1.05rem; 
+            font-weight: 500; 
+            text-transform: none;
+            letter-spacing: 0.5px; 
+            color: var(--text-accent); 
+            margin: 0 auto 3.5rem auto;
+            max-width: 500px;
+            border-bottom: 1px dashed var(--cord-mid);
+            padding-bottom: 1.5rem;
+        }
+
+        .header-intro-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            max-width: 680px;
+            margin: -1.5rem auto 3.5rem auto;
+            line-height: 1.9;
+            opacity: 0.9;
+        }
+
+        /* Anchor frame holding Profile photo/GIF */
+        .anchor-frame {
+            position: relative;
+            width: 180px; 
+            height: 180px; 
+            margin: 0 auto; 
+            z-index: 20;
+            transition: var(--transition-smooth);
+        }
+
+        .anchor-frame:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+        /* NEW INFINITELY ROTATING HALO ENGINE */
+        .halo-ring {
+            position: absolute;
+            /* Expanded slightly behind the image */
+            top: -5px; left: -5px; right: -5px; bottom: -5px; 
+            border-radius: 50%;
+            
+            /* Generates a sweeping 3-sided glowing rimlight that spins */
+            box-shadow: 
+                10px -10px 20px #cfb186, 
+                -10px 10px 20px #eed8b6, 
+                -5px -10px 18px rgba(245, 236, 216, 0.85), 
+                10px 5px 25px rgba(184, 147, 102, 0.5);
+                
+            /* Rotates purely natively infinitely with smooth logic */
+            -webkit-animation: ring-spin 4.5s linear infinite;
+            animation: ring-spin 4.5s linear infinite;
+            z-index: 18; /* Just beneath the picture itself */
+        }
+
+        /* Ensure Google's Iframe never kills this transform rule! */
+        @-webkit-keyframes ring-spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
+        @keyframes ring-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .profile-media {
+            width: 100%; 
+            height: 100%; 
+            border-radius: 50%;
+            object-fit: cover; 
+            border: 5px solid var(--bg-pure);
+            box-shadow: 0 0 0 5px var(--cord-dark), 0 15px 35px rgba(58, 37, 23, 0.12);
+            background-color: var(--bg-pure);
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 25;
+        }
+
+        .anchor-frame:hover .profile-media {
+            box-shadow: 0 0 0 7px var(--capuchin-dark), 0 18px 45px rgba(58, 37, 23, 0.18);
+        }
+
+
+        /* -------------------------------------
+           2. THE TRINITY OF VOCATION DECK
+        ------------------------------------- */
+        .timeline-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 2rem;
+            width: 100%;
+            margin: 2rem 0 5rem;
+            position: relative;
+        }
+
+        .center-rope {
+            display: none; /* Removed completely */
+        }
+
+        .branch-link {
+            display: none; /* Removed completely */
+        }
+
+        .vow-node {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            background: transparent;
+            min-height: auto;
+            margin-bottom: 0;
+            padding: 0;
+            transition: var(--transition-smooth);
+            
+            /* Enable 3D rendering space */
+            perspective: 1500px;
+            transform-style: preserve-3d;
+        }
+
+        /* 3D FLIP CARD SYSTEM CORE */
+        .card-container-3d {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-container-3d.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 16px;
+            transition: var(--transition-smooth);
+        }
+
+        .front-face {
+            position: relative;
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .back-face {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Customize back card list design */
+        .back-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--card-border);
+        }
+
+        .back-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--capuchin-dark);
+            margin: 0;
+        }
+
+        .back-flip-btn {
+            background-color: var(--bg-accent);
+            border: 1px solid var(--card-border);
+            color: var(--text-accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .back-flip-btn:hover {
+            background-color: var(--text-accent);
+            color: var(--bg-pure);
+            border-color: var(--text-accent);
+        }
+
+        .back-list-container {
+            flex: 1;
+            max-height: 260px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        /* Custom Scrollbar inside small list */
+        .back-list-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .back-list-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .back-list-container::-webkit-scrollbar-thumb {
+            background: var(--cord-mid);
+            border-radius: 2px;
+        }
+
+        /* Elegant dynamic subpage links inside the 3D card */
+        .subpage-item-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0.65rem;
+            background-color: var(--bg-pure);
+            border: 1px solid rgba(146, 88, 53, 0.08);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .subpage-item-link:hover {
+            border-color: var(--text-accent);
+            background-color: var(--bg-accent);
+            transform: translateX(2px);
+        }
+
+        .subpage-item-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .subpage-item-icon {
+            font-size: 1.05rem;
+            line-height: 1;
+            width: 24px;
+            height: 24px;
+            background-color: rgba(146, 88, 53, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .subpage-item-link:hover .subpage-item-icon {
+            background-color: var(--text-accent);
+            color: var(--bg-pure);
+        }
+
+        .subpage-item-details {
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .subpage-item-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--capuchin-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 155px;
+        }
+
+        .subpage-item-desc {
+            font-size: 0.62rem;
+            color: var(--text-main);
+            opacity: 0.75;
+            margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 155px;
+        }
+
+        .subpage-item-arrow {
+            color: var(--text-accent);
+            font-size: 0.78rem;
+            transition: var(--transition-smooth);
+            font-weight: 700;
+        }
+
+        .subpage-item-link:hover .subpage-item-arrow {
+            transform: translateX(2px);
+            color: var(--capuchin-dark);
+        }
+
+        /* Back facing card orb override */
+        .back-orb {
+            transform: translateX(-50%) rotateY(180deg) !important;
+        }
+
+        .vow-node:hover .back-orb {
+            transform: translateX(-50%) scale(1.15) rotateY(180deg) rotate(-10deg) !important;
+        }
+
+        /* Float loop animations for Faith, Art, Science/Tech */
+        @keyframes float-faith {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.4deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes float-art {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes float-science {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.6deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        #node-faith {
+            animation: float-faith 7s ease-in-out infinite;
+        }
+        #node-art {
+            animation: float-art 8.5s ease-in-out infinite;
+        }
+        #node-science {
+            animation: float-science 7.8s ease-in-out infinite;
+        }
+
+        /* Hover interaction pausing the animation with custom micro-accentuation */
+        .vow-node:hover {
+            animation-play-state: paused;
+        }
+
+        /* Beautiful interactive dynamic orbs placed at top of cards */
+        .pillar-orb {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--bg-pure);
+            border: 3px solid var(--text-accent);
+            box-shadow: 0 4px 12px rgba(146, 88, 53, 0.15), inset 0 2px 4px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 12;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pillar-orb svg {
+            color: var(--text-accent);
+            transition: var(--transition-smooth);
+        }
+
+        /* Content Board Cabinets */
+        .content-board {
+            width: 100%;
+            background: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 3rem 1.8rem 2.2rem; /* Generous top padding for overlapping orb */
+            box-shadow: 0 8px 30px rgba(58, 37, 23, 0.04);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 325px;
+            box-sizing: border-box;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .content-board:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 16px 45px rgba(58, 37, 23, 0.1);
+            border-color: var(--text-accent);
+            background: var(--bg-off);
+        }
+        
+        .vow-node:hover .pillar-orb {
+            transform: translateX(-50%) scale(1.15) rotate(10deg);
+            border-color: var(--capuchin-dark);
+            box-shadow: 0 6px 18px rgba(58, 37, 23, 0.2);
+            background: var(--bg-pure);
+        }
+        
+        .vow-node:hover .pillar-orb svg {
+            color: var(--capuchin-dark);
+        }
+
+        .right-aligned, .left-aligned {
+            margin: 0;
+            text-align: left;
+        }
+
+
+        /* -------------------------------------
+           4. INNER TEXT TYPOGRAPHY
+        ------------------------------------- */
+        .chapter-tag { 
+            display: inline-flex; 
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px; 
+            margin-bottom: 1.2rem;
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--capuchin-dark); 
+            background: var(--bg-accent);
+            border-radius: 4px; 
+            border: 1px solid var(--card-border);
+        }
+        
+        .chapter-title {
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.9rem; 
+            line-height: 1.3;
+            color: var(--capuchin-dark); 
+            margin: 0 0 14px 0; 
+            font-weight: 700;
+        }
+        
+        .chapter-body {
+            font-size: 0.95rem; 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .action-text {
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--text-accent); 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--cord-mid); 
+            padding-bottom: 3px; 
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+        
+        .content-board:hover .action-text { 
+            color: var(--capuchin-dark); 
+            border-bottom-color: var(--capuchin-dark); 
+            padding-left: 5px;
+        }
+
+
+        /* -------------------------------------
+           5. INTERACTIVE COMPONENT DETAILS / MODALS
+        ------------------------------------- */
+        .drawer-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(58, 37, 23, 0.45);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .drawer-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-panel {
+            position: fixed;
+            top: 0; right: -600px; bottom: 0;
+            width: 100%;
+            max-width: 580px;
+            background-color: var(--bg-off);
+            box-shadow: -10px 0 40px rgba(3a, 25, 17, 0.15);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 6px solid var(--cord-dark);
+            box-sizing: border-box; /* Fix for the peeking brown border on mobile */
+        }
+
+        @media (max-width: 600px) {
+            .drawer-panel {
+                max-width: 100%;
+                right: -105%; /* Pushes the panel completely off-screen securely */
+            }
+        }
+
+        .drawer-panel.active {
+            right: 0;
+        }
+
+        .drawer-header {
+            padding: 2rem;
+            background-color: var(--bg-accent);
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .drawer-header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--capuchin-dark);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .close-btn:hover {
+            background-color: var(--bg-pure);
+            border-color: var(--card-border);
+            color: var(--text-accent);
+            transform: rotate(90deg);
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2.5rem;
+        }
+
+        /* Custom Tabs inside Details Panel */
+        .nested-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 8px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            cursor: pointer;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: var(--transition-smooth);
+        }
+
+        .tab-btn.active {
+            background-color: var(--capuchin-dark);
+            color: var(--bg-pure);
+        }
+
+        .tab-content-panel {
+            display: none;
+            animation: pageFadeIn 0.4s ease forwards;
+        }
+
+        .tab-content-panel.active {
+            display: block;
+        }
+
+        /* Code & Mapping Sandbox Elements */
+        .sandbox-box {
+            background: var(--bg-accent);
+            border: 1px dashed var(--cord-dark);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .sandbox-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .sandbox-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sandbox-input {
+            width: 100%;
+            background: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 10px 14px;
+            box-sizing: border-box;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .sandbox-input:focus {
+            outline: none;
+            border-color: var(--text-accent);
+            box-shadow: 0 0 0 3px rgba(146, 88, 53, 0.1);
+        }
+
+        .sandbox-textarea {
+            width: 100%;
+            height: 120px;
+            background: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 12px;
+            box-sizing: border-box;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            resize: vertical;
+            margin-bottom: 1.2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .sandbox-textarea:focus {
+            outline: none;
+            border-color: var(--text-accent);
+            box-shadow: 0 0 0 3px rgba(146, 88, 53, 0.1);
+        }
+
+        .sandbox-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .secondary-btn {
+            background-color: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--text-accent);
+            color: var(--text-accent);
+            background-color: var(--bg-off);
+        }
+
+        .apply-btn {
+            background-color: var(--text-accent);
+            color: var(--bg-pure);
+            border: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .apply-btn:hover {
+            background-color: var(--capuchin-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Technical Codeblock exporter */
+        .code-container {
+            margin-top: 1.5rem;
+            position: relative;
+        }
+
+        .code-block {
+            background: #2a1b12; /* Rich charcoal brown */
+            color: #ebd7c8;
+            font-family: 'Courier Prime', 'Fira Code', 'Fira Mono', monospace;
+            font-size: 0.8rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-height: 250px;
+            margin: 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .copy-overlay-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .copy-overlay-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #dfa857;
+        }
+
+        /* -------------------------------------
+           6. LIVE STORYBOARD COMPONENT (Art subpage)
+        ------------------------------------- */
+        .storyboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .storyboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .storyboard-frame {
+            background: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .storyboard-img-placeholder {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #efeae2, #f5ecd8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-accent);
+            position: relative;
+        }
+
+        .storyboard-number {
+            position: absolute;
+            top: 8px; left: 8px;
+            background-color: var(--capuchin-dark);
+            color: var(--bg-pure);
+            font-size: 0.7rem;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .storyboard-text {
+            padding: 12px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            border-top: 1px dashed var(--card-border);
+        }
+
+        /* -------------------------------------
+           7. FLOW VISUALIZER COMPONENT (Science Subpage)
+        ------------------------------------- */
+        .network-node-indicator {
+            background-color: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .flow-line-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .flow-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--cord-mid);
+            position: relative;
+        }
+
+        .flow-dot.active {
+            background-color: var(--green-leaf);
+            box-shadow: 0 0 0 4px rgba(79, 111, 82, 0.2);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0px rgba(79, 111, 82, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(79, 111, 82, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(79, 111, 82, 0); }
+        }
+
+        .flow-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--capuchin-dark);
+            width: 90px;
+        }
+
+        .flow-arrow {
+            color: var(--cord-dark);
+            font-size: 0.9rem;
+        }
+
+        .flow-desc {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            flex: 1;
+        }
+
+        /* -------------------------------------
+           MOBILE LOGIC ALGORITHMS (TRINITY DECK V-STACK)
+        ------------------------------------- */
+        @media (max-width: 900px) {
+            .timeline-section {
+                flex-direction: column;
+                gap: 3.5rem;
+                padding-top: 2.5rem;
+            }
+
+            .vow-node { 
+                width: 100%;
+                margin-bottom: 0;
+            }
+            
+            .content-board { 
+                width: 100%; 
+                padding: 3rem 1.6rem 2rem; 
+                box-sizing: border-box; 
+            }
+
+            .header-title { font-size: 2.2rem; }
+            .header-subtitle { letter-spacing: 0.5px; font-size: 0.95rem; }
+            .anchor-frame { width: 150px; height: 150px; }
+        }
+        
+        /* -------------------------------------
+           9.5 PUBLIC WEBSITE DIRECTORY INDEX PORTALS
+        ------------------------------------- */
+        .portal-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed rgba(146, 88, 53, 0.15);
+        }
+        
+        .portal-heading {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-accent);
+            margin: 0 0 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .portal-subheading {
+            font-size: 0.82rem;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        .portal-links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        .portal-link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background-color: var(--bg-pure);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(58, 37, 23, 0.02);
+        }
+
+        .portal-link-card:hover {
+            border-color: var(--text-accent);
+            transform: translateY(-2px);
+            background-color: var(--bg-accent);
+            box-shadow: 0 8px 20px rgba(146, 88, 53, 0.08);
+        }
+
+        .portal-link-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .portal-link-icon-wrapper {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: rgba(146, 88, 53, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-accent);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .portal-link-card:hover .portal-link-icon-wrapper {
+            background-color: var(--text-accent);
+            color: var(--bg-pure);
+            transform: scale(1.05);
+        }
+
+        .portal-link-title-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .portal-link-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--capuchin-dark);
+            text-align: left;
+        }
+
+        .portal-link-subtitle {
+            font-size: 0.72rem;
+            color: var(--text-main);
+            opacity: 0.75;
+            margin-top: 1px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .portal-link-arrow {
+            color: var(--text-accent);
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .portal-link-card:hover .portal-link-arrow {
+            transform: translateX(4px);
+            color: var(--capuchin-dark);
+        }
+
+        @media (max-width: 500px) {
+            .system-container { padding-top: 1.5rem; }
+            .header-title { font-size: 1.8rem; }
+            .header-intro-text { font-size: 1.05rem; margin-bottom: 2.5rem; }
+            .content-board { padding: 2.8rem 1.2rem 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SMART GATEWAY TRANSITION OVERLAY -->
+<div id="gateway-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:var(--bg-pure); z-index:9999; flex-direction:column; align-items:center; justify-content:center; opacity:0; transition:opacity 0.4s ease;">
+    <div style="position:relative; width:80px; height:80px; margin-bottom:24px;">
+        <div class="halo-ring" style="top:0; left:0; right:0; bottom:0; box-shadow: 0 0 20px var(--cord-mid), inset 0 0 20px var(--cord-mid);"></div>
+        <svg style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:var(--capuchin-dark);" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6"></path>
+            <path d="M10 14 21 3"></path>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        </svg>
+    </div>
+    <div style="font-family:'Playfair Display', serif; font-size:1.4rem; color:var(--capuchin-dark); font-weight:700; margin-bottom:8px;">Journeying to</div>
+    <div id="gateway-title" style="font-size:0.9rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:var(--text-accent);">Page Name</div>
+    
+    <!-- Added fallback message to communicate clearly if sandbox blocks it -->
+    <div id="gateway-fallback-msg" style="opacity:0; margin-top: 20px; font-size: 0.75rem; color: var(--text-main); font-style: italic; transition: opacity 0.3s ease;">Opening securely in new tab...</div>
+</div>
+
+<div class="system-container">
+
+    <!-- 0. THE STUDIO GHIBLI BANNER PLACEMENT AREA -->
+    <div class="banner-holder">
+        <img class="banner-image" src="https://lh3.googleusercontent.com/d/1WKD-aqy7hxTtGc4Us16XzKQHZZgzhjSJ" alt="Fr. Joseph Ghibli Banner">
+        <div class="banner-glow"></div>
+    </div>
+
+    <!-- 1. IDENTIFIER & PROFILE ARCHITECTURE -->
+    <header>
+        <h1 class="header-title">Fr. Joseph Arputha Raj</h1>
+        <h2 class="header-subtitle">My humble religious journey as a simple capuchin friar!</h2>
+        
+        <p class="header-intro-text">
+            "எல்லாருக்கும் எல்லாமாக"
+            <span style="display:block; font-size:0.9rem; margin-top:8px; font-weight:600; font-family:'Inter', sans-serif; font-style:normal; text-transform:uppercase; letter-spacing:1px; color:var(--text-accent);">— 1 கொரி 9:22</span>
+        </p>
+        
+        <div class="anchor-frame">
+            <!-- This physical background ring continuously orbits natively -->
+            <div class="halo-ring"></div>
+            <!-- PROFILE HUB IMAGE -->
+            <img class="profile-media" src="https://lh3.googleusercontent.com/d/18b7YL8GrrE3I6N0_jLuO57xWiHlrjN3j" alt="Fr. Joseph Profile Hub" onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=18b7YL8GrrE3I6N0_jLuO57xWiHlrjN3j&sz=w500';">
+        </div>
+    </header>
+
+
+    <!-- 2. THE THREE POWERFUL IDENTITIES DECK (ALWAY FLOATING & RESPONSIVE) -->
+    <div class="timeline-section">
+
+
+        <!-- =======================
+             PILLAR 1: FAITH (Spiritual Core)
+        ======================== -->
+         <div class="vow-node" id="node-faith">
+             <div class="card-container-3d" id="card-faith">
+                 <!-- FRONT SIDE -->
+                 <div class="card-face front-face">
+                     <button class="pillar-orb" onclick="toggleCardFlip('faith', event)" aria-label="Open Faith Archives" title="Faith & Vocation Domain">
+                         <!-- Modern Christian Cross Icon -->
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                             <line x1="12" y1="3" x2="12" y2="21"></line>
+                             <line x1="7" y1="9" x2="17" y2="9"></line>
+                         </svg>
+                     </button>
+         
+                     <div class="content-board" onclick="toggleCardFlip('faith', event)">
+                         <div>
+                             <h3 class="chapter-title" id="faith-title-preview">Faith & Vocation</h3>
+                             <p class="chapter-body" id="faith-body-preview">Peace and goodness! My life is deeply rooted in the Franciscan path of simplicity, born from the quiet beauty of my hometown, Malayadipatti. Here, I share my spiritual journey, pastoral reflections, and the daily grace of living as a Capuchin missionary. This is the quiet center where everything else I do finds its true purpose.</p>
+                         </div>
+                         <div class="action-text">View Pages ➔</div>
+                     </div>
+                 </div>
+                 
+                 <!-- BACK SIDE -->
+                 <div class="card-face back-face">
+                     <button class="pillar-orb back-orb" onclick="toggleCardFlip('faith', event)" aria-label="Go Back" title="View Intro">
+                         <!-- Back Arrow Icon -->
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                             <polyline points="12 19 5 12 12 5"></polyline>
+                             <line x1="19" y1="12" x2="5" y2="12"></line>
+                         </svg>
+                     </button>
+                     <div class="content-board">
+                         <div class="back-header">
+                             <h3 class="back-title">Faith Journey</h3>
+                             <button class="back-flip-btn" onclick="toggleCardFlip('faith', event); event.stopPropagation();">Intro ↺</button>
+                         </div>
+                         <div class="back-list-container" id="back-list-faith">
+                             <!-- Rendered dynamically -->
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+  
+  
+         <!-- =======================
+              PILLAR 2: ART (Creative Expression)
+         ======================== -->
+         <div class="vow-node" id="node-art">
+             <div class="card-container-3d" id="card-art">
+                 <!-- FRONT SIDE -->
+                 <div class="card-face front-face">
+                     <button class="pillar-orb" onclick="toggleCardFlip('art', event)" aria-label="Open Cinematic Arts" title="Art & Cinematic Domain">
+                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                             <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                             <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                         </svg>
+                     </button>
+         
+                     <div class="content-board" onclick="toggleCardFlip('art', event)">
+                         <div>
+                             <h3 class="chapter-title" id="art-title-preview">Art & History</h3>
+                             <p class="chapter-body" id="art-body-preview">I believe art is a beautiful reflection of the Creator. From my roots in Tamil classical music to my current journey studying visual cinema at DBIMA in Paris, my passion is creating modern "Digital Parables." Come explore my short films, audio projects, and humble attempts to tell stories of faith, humanity, and hope through the lens.</p>
+                         </div>
+                         <div class="action-text">Explore Arts ➔</div>
+                     </div>
+                 </div>
+                 
+                 <!-- BACK SIDE -->
+                 <div class="card-face back-face">
+                     <button class="pillar-orb back-orb" onclick="toggleCardFlip('art', event)" aria-label="Go Back" title="View Intro">
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                             <polyline points="12 19 5 12 12 5"></polyline>
+                             <line x1="19" y1="12" x2="5" y2="12"></line>
+                         </svg>
+                     </button>
+                     <div class="content-board">
+                         <div class="back-header">
+                             <h3 class="back-title">Art Journey</h3>
+                             <button class="back-flip-btn" onclick="toggleCardFlip('art', event); event.stopPropagation();">Intro ↺</button>
+                         </div>
+                         <div class="back-list-container" id="back-list-art">
+                             <!-- Rendered dynamically -->
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+  
+  
+         <!-- =======================
+              PILLAR 3: SCIENCE (System Logic)
+         ======================== -->
+         <div class="vow-node" id="node-science">
+             <div class="card-container-3d" id="card-science">
+                 <!-- FRONT SIDE -->
+                 <div class="card-face front-face">
+                     <button class="pillar-orb" onclick="toggleCardFlip('science', event)" aria-label="Open Tech & AI" title="Tech & AI Domain">
+                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                             <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
+                             <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path>
+                             <path d="M9 13h4"></path>
+                             <path d="M12 10v4"></path>
+                             <path d="M12 14v4"></path>
+                             <path d="M16 14h-4"></path>
+                             <circle cx="9" cy="13" r="1.2" fill="currentColor"></circle>
+                             <circle cx="16" cy="14" r="1.2" fill="currentColor"></circle>
+                             <circle cx="12" cy="10" r="1.2" fill="currentColor"></circle>
+                             <circle cx="12" cy="18" r="1.2" fill="currentColor"></circle>
+                         </svg>
+                     </button>
+         
+                     <div class="content-board" onclick="toggleCardFlip('science', event)">
+                         <div>
+                             <h3 class="chapter-title" id="science-title-preview">Tech & AI</h3>
+                             <p class="chapter-body" id="science-body-preview">Can ancient faith walk hand-in-hand with the future? I firmly believe so. Guided by the Church’s call for ethical technology (Algorethics), I am passionate about using digital tools to serve the marginalized and scale education. Here, you'll find my work exploring how AI, secure databases, and frugal innovations can lovingly support our communities.</p>
+                         </div>
+                         <div class="action-text">Explore Tech & AI ➔</div>
+                     </div>
+                 </div>
+                 
+                 <!-- BACK SIDE -->
+                 <div class="card-face back-face">
+                     <button class="pillar-orb back-orb" onclick="toggleCardFlip('science', event)" aria-label="Go Back" title="View Intro">
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                             <polyline points="12 19 5 12 12 5"></polyline>
+                             <line x1="19" y1="12" x2="5" y2="12"></line>
+                         </svg>
+                     </button>
+                     <div class="content-board">
+                         <div class="back-header">
+                             <h3 class="back-title">Tech/AI Journey</h3>
+                             <button class="back-flip-btn" onclick="toggleCardFlip('science', event); event.stopPropagation();">Intro ↺</button>
+                         </div>
+                         <div class="back-list-container" id="back-list-science">
+                             <!-- Rendered dynamically -->
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+    </div>
+</div>
+
+<!-- =================--------------------------
+     MASTER DETAILS SLIDE-OVER DRAWER
+---------------------------------============== -->
+<div class="drawer-backdrop" id="drawer-backdrop" onclick="closeDetailsDrawer()"></div>
+
+<div class="drawer-panel" id="drawer-panel">
+    <div class="drawer-header">
+        <h2 class="drawer-header-title" id="drawer-main-title">Archival Ledger</h2>
+        <button class="close-btn" onclick="closeDetailsDrawer()" aria-label="Close Drawer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="drawer-body">
+        
+        <!-- DIRECT PAGE NAVIGATION PORTALS -->
+        <div id="drawer-portal-directory">
+            <!-- Populated dynamically via javascript -->
+        </div>
+
+        <div id="drawer-archive-divider" style="margin: 2rem 0 1.2rem; display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-accent); opacity: 0.75;">Historical Context / Research Notes</span>
+            <div style="flex: 1; height: 1px; background: var(--card-border); opacity: 0.5;"></div>
+        </div>
+        
+        <!-- Nested Custom Chapters/Tabs of selected Knot -->
+        <div class="nested-tabs" id="drawer-tab-row">
+            <!-- Shared dynamically -->
+        </div>
+
+        <!-- TAB CONTENT INTERFACES -->
+        <div id="drawer-subcontent">
+            <!-- Renders dynamically -->
+        </div>
+
+        <!-- INTEGRATE THE HIGH-FIDELITY CONTENT MAPPING SANDBOX -->
+        <div class="sandbox-box" id="sandbox-container" style="display: none;">
+            <div class="sandbox-header">
+                <span class="sandbox-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
+                        <line x1="3" y1="22" x2="21" y2="22"></line>
+                    </svg>
+                    Content Design Sandbox
+                </span>
+                <span class="chapter-tag" style="font-size: 0.65rem; margin-bottom: 0;">Google Sites Ready</span>
+            </div>
+            
+            <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--capuchin-dark);" for="editor-base-url-field">Google Sites Base URL</label>
+            <input type="text" id="editor-base-url-field" class="sandbox-input" style="margin-bottom: 12px;" oninput="updateBaseUrlFromSandbox()" value="https://www.josephcap.com">
+            
+            <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--capuchin-dark);" for="editor-link-target-field">Link Open Behavior (Google Sites)</label>
+            <select id="editor-link-target-field" class="sandbox-input" style="margin-bottom: 12px; width: 100%; display: block;" onchange="updateLinkTargetFromSandbox()">
+                <option value="_blank">Open Subpages in New Tab (_blank)</option>
+                <option value="_top" selected>Open Subpages in Same Window (_top) - Native Feel</option>
+            </select>
+            
+            <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--capuchin-dark);" for="editor-title-field">Card Overlay Title</label>
+            <input type="text" id="editor-title-field" class="sandbox-input" style="margin-bottom: 12px;" oninput="liveUpdateContent()">
+            
+            <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--capuchin-dark);" for="editor-body-field">Card Summary Text</label>
+            <textarea id="editor-body-field" class="sandbox-textarea" style="margin-bottom: 16px;" oninput="liveUpdateContent()"></textarea>
+
+            <!-- DYNAMIC CATALOG MANAGER -->
+            <div style="border-top: 1px dashed var(--cord-mid); padding-top: 14px; margin-bottom: 18px;">
+                <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-accent); display: block; margin-bottom: 8px;">
+                    Manage Flip-Card Sub-Pages
+                </label>
+                <p style="font-size: 0.7rem; color: var(--text-main); margin: 0 0 10px 0; opacity: 0.8; line-height: 1.4;">
+                    Edit link values, icons, and titles. All changes update the 3D flipped-card backside list in real-time.
+                </p>
+                <div id="sandbox-subpages-editor" style="display: flex; flex-direction: column; gap: 8px;">
+                    <!-- Rendered dynamically by javascript -->
+                </div>
+                <button class="secondary-btn" onclick="addCustomSubpageToActiveKnot()" style="margin-top: 10px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.78rem; padding: 6px 12px; background: var(--bg-pure);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Add Dynamic Page Link
+                </button>
+            </div>
+
+            <!-- EXPORTERS -->
+            <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--capuchin-dark); display: block; margin-bottom: 8px;">Export Configurations</label>
+            <div class="sandbox-actions" style="flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                <button class="secondary-btn" onclick="exportGoogleSitesBlock()" style="flex: 1; font-size: 0.75rem; padding: 8px 12px; min-width: 140px; justify-content: center;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                    </svg>
+                    Single-Card Embed
+                </button>
+                <button class="secondary-btn" onclick="exportFullWidgetHtml()" style="flex: 1; font-size: 0.75rem; padding: 8px 12px; min-width: 140px; justify-content: center; border-color: var(--text-accent); color: var(--text-accent);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Full Interactive Page
+                </button>
+                <button class="apply-btn" onclick="resetVowDefaults()" style="width: 100%; font-size: 0.75rem; padding: 8px 12px; justify-content: center; background-color: var(--capuchin-dark);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M2.5 2v6h6M21.5 22v-6h-6"></path>
+                        <path d="M22 11.5A10 10 0 1 0 9.5 21l2-1.5"></path>
+                    </svg>
+                    Revert Details to Default
+                </button>
+            </div>
+
+            <!-- Embed Code output block -->
+            <div id="embed-code-area" class="code-container" style="display: none; border-top: 1px dashed var(--cord-mid); padding-top: 12px;">
+                <div id="code-area-title" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-accent); margin-bottom: 6px;">Google Sites Embed Code:</div>
+                <div style="position: absolute; top: -2px; right: 0; display: flex; gap: 4px;">
+                    <button class="copy-overlay-btn" onclick="copyEmbedText()" style="position: static; font-size: 0.7rem; padding: 4px 8px; background-color: var(--capuchin-dark);">Copy</button>
+                    <button class="copy-overlay-btn" onclick="downloadEmbedText()" id="download-btn-dynamic" style="position: static; font-size: 0.7rem; padding: 4px 8px; background-color: var(--text-accent);">Download</button>
+                </div>
+                <pre class="code-block" id="embed-code-text" style="max-height: 200px; margin-top: 6px;"></pre>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =================--------------------------
+     LOGIC ENVELOPE (VANILLA ES6 SCRIPTING)
+---------------------------------============== -->
+<script>
+    // CORE ACTIVE STATE POOL
+    let activeKnotType = 'faith';
+
+    // EDIT MODE DETECTION (Hides sandbox unless ?edit=true or ?sandbox=true)
+    const urlParams = new URLSearchParams(window.location.search);
+    let isEditMode = urlParams.get('edit') === 'true' || urlParams.get('sandbox') === 'true';
+
+    // Define the base URL of your published Google Sites / Custom Domain!
+    let websiteBaseUrl = "https://www.josephcap.com";
+
+    // Define the link redirect target behavior
+    let websiteLinkTarget = "_top";
+
+    // CREATIVE ROUTER SYSTEM TO BYPASS SILENT FAILURES IN GOOGLE SITES
+    function smartNavigate(url, target, pageTitle) {
+        // Show Transition UI
+        const overlay = document.getElementById('gateway-overlay');
+        const titleEl = document.getElementById('gateway-title');
+        const fallbackMsg = document.getElementById('gateway-fallback-msg');
+        
+        if(overlay && titleEl) {
+            titleEl.innerText = pageTitle || "Destination";
+            if(fallbackMsg) fallbackMsg.style.opacity = '0';
+            overlay.style.display = 'flex';
+            void overlay.offsetWidth; // Reflow
+            overlay.style.opacity = '1';
+        }
+
+        setTimeout(() => {
+            if (target === '_blank') {
+                window.open(url, '_blank');
+                hideGateway();
+            } else {
+                // Try top navigation
+                try {
+                    window.top.location.href = url;
+                } catch(e) {
+                    console.warn("Top navigation blocked cross-origin.");
+                }
+
+                // CREATIVE FALLBACK:
+                // If window.top.location succeeded, the page will unload and this timer won't matter.
+                // If it failed silently (Google Sites sandbox), the page is still here after 800ms!
+                // We detect this and automatically launch the _blank fallback so it WORKS.
+                window.fallbackRoutingTimer = setTimeout(() => {
+                    console.log("Top routing failed silently. Engaging smart fallback to new tab.");
+                    if(fallbackMsg) fallbackMsg.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        window.open(url, '_blank');
+                        hideGateway();
+                    }, 800); // Give user a moment to read the fallback message
+                    
+                }, 800);
+            }
+        }, 300);
+    }
+    
+    function hideGateway() {
+        const overlay = document.getElementById('gateway-overlay');
+        if(overlay) {
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; }, 400);
+        }
+    }
+
+    // We must clear the timer if the page legitimately starts unloading!
+    window.addEventListener('beforeunload', () => {
+        clearTimeout(window.fallbackRoutingTimer);
+    });
+
+    function updateBaseUrlFromSandbox() {
+        const inputVal = document.getElementById('editor-base-url-field').value.trim();
+        if (inputVal) {
+            websiteBaseUrl = inputVal;
+            // Instantly update top-level card anchor href attributes
+            updatePillarHrefs();
+            // Refresh all card back subpages links with the updated base URL
+            renderCardBackSubpages('faith');
+            renderCardBackSubpages('art');
+            renderCardBackSubpages('science');
+            // Instantly re-render directory inside the drawer to update href attributes
+            const data = contentStorage[activeKnotType];
+            renderDirectoryPortal(activeKnotType, data);
+        }
+    }
+
+    function updateLinkTargetFromSandbox() {
+        const selectVal = document.getElementById('editor-link-target-field').value;
+        websiteLinkTarget = selectVal;
+        
+        // Refresh all card back subpages links with the updated link target
+        renderCardBackSubpages('faith');
+        renderCardBackSubpages('art');
+        renderCardBackSubpages('science');
+        // Instantly re-render directory inside the drawer to update target behavior
+        const data = contentStorage[activeKnotType];
+        renderDirectoryPortal(activeKnotType, data);
+    }
+
+    // TOGGLE EDIT MODE INTERACTIVELY
+    function toggleSandboxModeVisually() {
+        isEditMode = !isEditMode;
+        const sandboxBox = document.getElementById('sandbox-container');
+        
+        if (isEditMode) {
+            showToastNotification("🛠️ Custom Link Editor Active! Click any card to customize titles, links, and icons in real time.");
+            
+            if (sandboxBox) {
+                sandboxBox.style.display = 'block';
+            }
+        } else {
+            if (sandboxBox) {
+                sandboxBox.style.display = 'none';
+            }
+        }
+        
+        // Re-render subpages editor to reflect the new state
+        renderSubpagesEditor();
+    }
+
+    // BEAUTIFUL INTERACTIVE FLOATING INSTRUCTION TOAST
+    function showToastNotification(message) {
+        const oldToast = document.getElementById('sandbox-toast');
+        if (oldToast) oldToast.remove();
+        
+        const toast = document.createElement('div');
+        toast.id = 'sandbox-toast';
+        toast.style.cssText = `
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background-color: var(--capuchin-dark);
+            color: var(--bg-pure);
+            padding: 12px 24px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(58, 37, 23, 0.25);
+            z-index: 10000;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            pointer-events: none;
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            max-width: 90%;
+            border: 1px solid var(--cord-mid);
+        `;
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        
+        // Animate in
+        setTimeout(() => {
+            toast.style.transform = 'translateX(-50%) translateY(0)';
+            toast.style.opacity = '1';
+        }, 30);
+        
+        // Disappear toast automatically
+        setTimeout(() => {
+            toast.style.transform = 'translateX(-50%) translateY(-20px)';
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 6000);
+    }
+
+    // MEMORY STORE FOR THE INTERACTIVE MAPPING (SANDBOX ARCHITECTURE)
+    // You can manually edit the page list, titles, relative paths, and descriptions below.
+    /* === CONFIGURATION PORTALS START === */
+    const contentStorage = {
+        faith: {
+            title: "Faith & Vocation",
+            body: "Peace and goodness! My life is deeply rooted in the Franciscan path of simplicity, born from the quiet beauty of my hometown, Malayadipatti. Here, I share my spiritual journey, pastoral reflections, and the daily grace of living as a Capuchin missionary. This is the quiet center where everything else I do finds its true purpose.",
+            subpages: [
+                { label: "Chronicles", path: "/faith/chronicles", icon: "📝", desc: "Daily Chronicles and Franciscan Journey Logs" },
+                { label: "Archives", path: "/faith/archives", icon: "🗄️", desc: "Historical Annals, Rare Records & Roots" },
+                { label: "Writings", path: "/faith/writings", icon: "✍️", desc: "Theological Essays, Poetry & Meditations" }
+            ],
+            tabs: [
+                {
+                    id: "heritage",
+                    label: "Franciscan Charism",
+                    html: `
+                        <p style="margin-top:0;"><strong>The Simple Joy of Brotherhood:</strong> The Order of Friars Minor Capuchin walks in simplicity, active contemplation, and deep solidarity with the margins of society. By nurturing silent prayer and community fraternal life, we represent the living lineage of the Umbrian vision.</p>
+                        <p>Our life is anchored in ecological protection, simple habits (the dark brown wool habit wrapped by three corded knots representing Poverty, Chastity, and Obedience), and continuous theological study.</p>
+                        <div style="border-left: 3px solid var(--cord-dark); padding-left: 12px; font-style: italic; font-size: 0.9rem; color: var(--text-main); margin: 20px 0;">
+                            "Sanctify yourselves and you will sanctify society."
+                        </div>
+                    `
+                },
+                {
+                    id: "malayadipatty",
+                    label: "Malayadipatty",
+                    html: `
+                        <p style="margin-top:0;"><strong>A Historic Native Sanctuary:</strong> Malayadipatty represents deep-seated centuries-old ancestry, Catholic parish heritage, and monastic dedication. It is here that community, traditional parish records, and native callings merge with contemplative simplicity.</p>
+                        <p>As historic beacons of faith in Southern India, our local missionary focus champions active village pedagogy, family pastoral guidance, and physical stewardship over sacred ancient architectural lands.</p>
+                    `
+                },
+                {
+                    id: "mission",
+                    label: "Global Missions",
+                    html: `
+                        <p style="margin-top:0;"><strong>Digital Bridges for Distant Hearts:</strong> Modern world structures necessitate virtual spiritual bridges. We create online digital connection nodes and support platforms that unite Capuchin missions across South Asia, Europe, and the Americas.</p>
+                        <ul style="padding-left:20px; font-size:0.9rem;">
+                            <li style="margin-bottom:8px;">Virtual Fraternity Logs for decentralized brothers</li>
+                            <li style="margin-bottom:8px;">Pastoral visual programs beamed internationally</li>
+                            <li style="margin-bottom:8px;">Ecological missionary action tracking pipelines</li>
+                        </ul>
+                    `
+                }
+            ]
+        },
+        art: {
+            title: "Art & History",
+            body: "I believe art is a beautiful reflection of the Creator. From my roots in Tamil classical music to my current journey studying visual cinema at DBIMA in Paris, my passion is creating modern \"Digital Parables.\" Come explore my short films, audio projects, and humble attempts to tell stories of faith, humanity, and hope through the lens.",
+            subpages: [
+                { label: "Music", path: "/art/music", icon: "🎵", desc: "Tamil Classical Music & Multilingual Audio Albums" },
+                { label: "History", path: "/art/history", icon: "📜", desc: "Local Parish Roots, Genealogy & Monastic Legacies" },
+                { label: "Culturals", path: "/art/culturals", icon: "🎭", desc: "Cultural Expressions, Dramas & Social Events" },
+                { label: "Cinema", path: "/art/cinema", icon: "🎬", desc: "Theological Cinema, Short Films & Digital Parables" }
+            ],
+            tabs: [
+                {
+                    id: "cinematic",
+                    label: "Theological Cinema",
+                    html: `
+                        <p style="margin-top:0;"><strong>Digital Brushes of Grace:</strong> Aligning contemporary film aesthetics with authentic Christian parables. Using the medium of cinema to trigger transcendental awareness, using light, shadow, pacing, and high-fidelity sonic landscapes.</p>
+                        <p>Through our dedicated efforts at DBIMA (Don Bosco International Media Academy), we synthesize professional filmmaking workflows with theological inquiry to prepare the next generation of visual ministers.</p>
+                    `
+                },
+                {
+                    id: "veo",
+                    label: "Google Veo parables",
+                    html: `
+                        <p style="margin-top:0;"><strong>Integrating Generative Mediums:</strong> Building next-generation Catholic narratives using high-performance AI video generators (such as Google Veo) alongside tailored ComfyUI pipelines.</p>
+                        <p>We combine Ghibli-inspired warm pastoral backgrounds with serene, non-intrusive character models to draft beautiful dynamic storyboards.</p>
+                        
+                        <!-- Interactive Generative Storyboard Previewer -->
+                        <div style="background:var(--bg-accent); border:1px solid var(--card-border); padding:1rem; border-radius:8px; margin-top:1.5rem;">
+                            <strong style="font-size:0.85rem; color:var(--capuchin-dark); display:block; margin-bottom:8px;">Storyboarding Divine Mercy:</strong>
+                            <div class="storyboard-grid">
+                                <div class="storyboard-frame">
+                                    <div class="storyboard-img-placeholder">
+                                        <span class="storyboard-number">Frame 1</span>
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="storyboard-text">Soft hickory twilight filters through the stained glass of Malayadipatty shrine.</div>
+                                </div>
+                                <div class="storyboard-frame">
+                                    <div class="storyboard-img-placeholder">
+                                        <span class="storyboard-number">Frame 2</span>
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="storyboard-text">A vintage notebook containing detailed cinematic frame sketches rests in the camera studio.</div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: "production",
+                    label: "DBIMA Workflows",
+                    html: `
+                        <p style="margin-top:0;"><strong>The Media Academy Pipeline:</strong> Providing pedagogical blueprints for aspiring young creators. Our digital production workspace maps out precise tasks:</p>
+                        <ol style="padding-left:20px; font-size:0.9rem; line-height:1.6;">
+                            <li style="margin-bottom:6px;">Concept and Divine Metaphor Extraction</li>
+                            <li style="margin-bottom:6px;">Screenwriting & Dialog Tuning under Monastic simplicity</li>
+                            <li style="margin-bottom:6px;">Color-grading using warm earthy/cedar spectrum constraints</li>
+                            <li style="margin-bottom:6px;">Binaural soundscape engineering</li>
+                        </ol>
+                    `
+                }
+            ]
+        },
+        science: {
+            title: "Tech & AI",
+            body: "Can ancient faith walk hand-in-hand with the future? I firmly believe so. Guided by the Church’s call for ethical technology (Algorethics), I am passionate about using digital tools to serve the marginalized and scale education. Here, you'll find my work exploring how AI, secure databases, and frugal innovations can lovingly support our communities.",
+            subpages: [
+                { label: "AI Projects", path: "/science/ai-projects", icon: "🧠", desc: "Ethical AI programs, LLM pipelines, and applets" },
+                { label: "AI Workshops", path: "/science/ai-workshops", icon: "💡", desc: "Educational workshops and technical training" }
+            ],
+            tabs: [
+                {
+                    id: "algorethics",
+                    label: "Algorethics",
+                    html: `
+                        <p style="margin-top:0;"><strong>Human-Centric AI Ethics:</strong> Formulating pastoral frameworks for artificial intelligence. We live-align computer logic with Roman Pontifical Academy declarations on ethical machine learning.</p>
+                        <p>By promoting transparency, non-bias, and algorithmic compassion, we emphasize that systems must serve the common human good rather than mechanical monetization indices.</p>
+                        <blockquote style="border-left:3px solid var(--text-accent); padding-left:12px; margin:1rem 0; font-style:italic; font-size:0.9rem;">
+                            Technology must never strip humanity of its relational depth and physical connection.
+                        </blockquote>
+                    `
+                },
+                {
+                    id: "logistics",
+                    label: "Logistics Engine",
+                    html: `
+                        <p style="margin-top:0;"><strong>Managing the 50,000+ Network:</strong> Building decentralized web conduits, educational systems, and logistic channels to empower huge numbers of active catechists and educators.</p>
+                        <p>Our secure cloud conduits distribute localized digital assets, lesson templates, and pastoral updates swiftly to different centers around the globe.</p>
+                    `
+                },
+                {
+                    id: "network",
+                    label: "Communication Hub",
+                    html: `
+                        <p style="margin-top:0;"><strong>Interactive Directives Flow:</strong> Real-time modeling of how pastoral guides stream smoothly through coordinate hubs to active educators:</p>
+                        
+                        <!-- Interactive flow visualizer panel -->
+                        <div class="network-node-indicator">
+                            <div class="flow-line-item">
+                                <div class="flow-dot active"></div>
+                                <div class="flow-label">1. Authority</div>
+                                <div class="flow-arrow">➔</div>
+                                <div class="flow-desc">Capuchin directives encoded into visual PDF guides.</div>
+                            </div>
+                            <div class="flow-line-item">
+                                <div class="flow-dot"></div>
+                                <div class="flow-label">2. Core Node</div>
+                                <div class="flow-arrow">➔</div>
+                                <div class="flow-desc">Processed via regional coordinator channels seamlessly.</div>
+                            </div>
+                            <div class="flow-line-item">
+                                <div class="flow-dot"></div>
+                                <div class="flow-label">3. Educators</div>
+                                <div class="flow-arrow">➔</div>
+                                <div class="flow-desc">Over 50,000 instructors download assets locally.</div>
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        }
+    };
+    /* === CONFIGURATION PORTALS END === */
+
+    // Helper functions to render portal links
+    function renderDirectoryPortal(knotType, data) {
+        const directoryArea = document.getElementById('drawer-portal-directory');
+        if (directoryArea) {
+            directoryArea.innerHTML = '';
+            if (data.subpages && data.subpages.length > 0) {
+                let portalHtml = `
+                    <div class="portal-header">
+                        <div class="portal-heading">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            Direct Page Navigation Portals
+                        </div>
+                        <p class="portal-subheading">Select any sub-page to open it directly in your main browser window:</p>
+                    </div>
+                    <div class="portal-links-grid">
+                `;
+                
+                data.subpages.forEach(sub => {
+                    const fullUrl = sub.url ? sub.url : (websiteBaseUrl + sub.path);
+                    portalHtml += `
+                        <a href="${fullUrl}" class="portal-link-card" onclick="event.preventDefault(); smartNavigate('${fullUrl}', '${websiteLinkTarget}', '${sub.label}');">
+                            <div class="portal-link-left">
+                                <div class="portal-link-icon-wrapper">
+                                    <span style="font-size: 1.25rem; line-height: 1;">${sub.icon}</span>
+                                </div>
+                                <div class="portal-link-title-box">
+                                    <span class="portal-link-title">${sub.label}</span>
+                                    <span class="portal-link-subtitle">${sub.desc || 'Open topic page'}</span>
+                                </div>
+                            </div>
+                            <div class="portal-link-arrow">➔</div>
+                        </a>
+                    `;
+                });
+                
+                portalHtml += `</div>`;
+                directoryArea.innerHTML = portalHtml;
+                directoryArea.style.display = 'block';
+                document.getElementById('drawer-archive-divider').style.display = 'flex';
+            } else {
+                directoryArea.style.display = 'none';
+                document.getElementById('drawer-archive-divider').style.display = 'none';
+            }
+        }
+    }
+
+    // 1.5 PILLAR CLICKS INTERACTION ROUTERS
+    function updatePillarHrefs() {
+        document.querySelectorAll('[data-target-pillar]').forEach(el => {
+            const knot = el.getAttribute('data-target-pillar');
+            let pathValue = "/faith";
+            if (knot === "art") pathValue = "/art";
+            if (knot === "science") pathValue = "/science";
+            
+            el.setAttribute('href', websiteBaseUrl + pathValue);
+        });
+    }
+
+    // 3D Card Flipping Logic (Enabling dynamic inline catalog navigation on Google Sites!)
+    function toggleCardFlip(knotType, event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        
+        const card = document.getElementById(`card-${knotType}`);
+        if (card) {
+            const isFlipped = card.classList.contains('flipped');
+            
+            // Remove flipped state from other cards to ensure sleek layout representation
+            document.querySelectorAll('.card-container-3d').forEach(c => {
+                if (c.id !== `card-${knotType}`) {
+                    c.classList.remove('flipped');
+                }
+            });
+            
+            if (isFlipped) {
+                card.classList.remove('flipped');
+            } else {
+                card.classList.add('flipped');
+                renderCardBackSubpages(knotType);
+            }
+            
+            // Sync side drawer controls in sandbox mode
+            if (isEditMode) {
+                openDetailsDrawer(knotType);
+            }
+        }
+    }
+
+    function renderCardBackSubpages(knotType) {
+        const listContainer = document.getElementById(`back-list-${knotType}`);
+        if (!listContainer) return;
+
+        listContainer.innerHTML = '';
+        const data = contentStorage[knotType];
+        
+        if (data && data.subpages && data.subpages.length > 0) {
+            data.subpages.forEach(sub => {
+                const fullUrl = sub.url ? sub.url : (websiteBaseUrl + sub.path);
+                
+                // INTEGRATED CREATIVE ROUTER CALL
+                const itemHtml = `
+                    <a href="${fullUrl}" class="subpage-item-link" onclick="event.preventDefault(); event.stopPropagation(); smartNavigate('${fullUrl}', '${websiteLinkTarget}', '${sub.label}');">
+                        <div class="subpage-item-left">
+                            <span class="subpage-item-icon">${sub.icon}</span>
+                            <div class="subpage-item-details">
+                                <div class="subpage-item-title">${sub.label}</div>
+                                <div class="subpage-item-desc">${sub.desc || 'Explore details'}</div>
+                            </div>
+                        </div>
+                        <span class="subpage-item-arrow">➔</span>
+                    </a>
+                `;
+                listContainer.insertAdjacentHTML('beforeend', itemHtml);
+            });
+        }
+    }
+
+    // CATALOG MANAGEMENT ENGINE (VISUAL DYNAMIC MAPPING)
+    function renderSubpagesEditor() {
+        const editorArea = document.getElementById('sandbox-subpages-editor');
+        if (!editorArea) return;
+        
+        editorArea.innerHTML = '';
+        const data = contentStorage[activeKnotType];
+        
+        if (data && data.subpages) {
+            data.subpages.forEach((sub, index) => {
+                const cardHtml = `
+                    <div class="subpage-edit-row" style="background: var(--bg-pure); border: 1px solid var(--card-border); border-radius: 8px; padding: 10px; position: relative; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 2px 6px rgba(58, 37, 23, 0.03);">
+                        <button onclick="deleteSubpageByIndex(${index}, event)" style="position: absolute; top: 6px; right: 8px; background: none; border: none; color: #a94442; cursor: pointer; padding: 2px; font-size: 0.95rem; font-weight: 700; line-height: 1; transition: var(--transition-smooth);" title="Remove link" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#a94442'">✖</button>
+                        <div style="display: flex; gap: 6px; margin-right: 18px;">
+                            <input type="text" value="${sub.icon || '🔗'}" oninput="updateSubpageField(${index}, 'icon', this.value)" placeholder="Icon" style="width: 32px; text-align: center; border: 1px solid var(--card-border); border-radius: 4px; padding: 3px; font-size: 0.9rem; background: var(--bg-off);" title="Emoji Icon">
+                            <input type="text" value="${sub.label}" oninput="updateSubpageField(${index}, 'label', this.value)" placeholder="Page Title (e.g., Theology)" style="flex: 1; border: 1px solid var(--card-border); border-radius: 4px; padding: 3px 6px; font-size: 0.82rem; font-weight: 600; color: var(--capuchin-dark); background: var(--bg-pure);">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 0.62rem; color: var(--text-main); font-weight: 700; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.5px;">Destination URL / Path:</span>
+                            <input type="text" value="${sub.path}" oninput="updateSubpageField(${index}, 'path', this.value)" placeholder="e.g. /theology or full url" style="border: 1px solid var(--card-border); border-radius: 4px; padding: 3px 6px; font-size: 0.75rem; font-family: 'Courier Prime', monospace; background: var(--bg-off); color: var(--text-main);">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 0.62rem; color: var(--text-main); font-weight: 700; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.5px;">Short Notes:</span>
+                            <input type="text" value="${sub.desc || ''}" oninput="updateSubpageField(${index}, 'desc', this.value)" placeholder="Descriptive details" style="border: 1px solid var(--card-border); border-radius: 4px; padding: 3px 6px; font-size: 0.72rem; background: var(--bg-pure); color: var(--text-main);">
+                        </div>
+                    </div>
+                `;
+                editorArea.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+    }
+
+    function updateSubpageField(index, field, value) {
+        const data = contentStorage[activeKnotType];
+        if (data && data.subpages && data.subpages[index]) {
+            data.subpages[index][field] = value;
+            
+            // Instantly sync background card backside lists and drawer lists
+            renderCardBackSubpages(activeKnotType);
+            renderDirectoryPortal(activeKnotType, data);
+        }
+    }
+
+    function deleteSubpageByIndex(index, event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        const data = contentStorage[activeKnotType];
+        if (data && data.subpages) {
+            data.subpages.splice(index, 1);
+            
+            // Re-render
+            renderSubpagesEditor();
+            renderCardBackSubpages(activeKnotType);
+            renderDirectoryPortal(activeKnotType, data);
+        }
+    }
+
+    function addCustomSubpageToActiveKnot() {
+        const data = contentStorage[activeKnotType];
+        if (data) {
+            if (!data.subpages) data.subpages = [];
+            data.subpages.push({
+                label: "Custom Topic Page",
+                path: `/${activeKnotType}/new-page`,
+                icon: "📖",
+                desc: "Explore special contents"
+            });
+            
+            // Re-render
+            renderSubpagesEditor();
+            renderCardBackSubpages(activeKnotType);
+            renderDirectoryPortal(activeKnotType, data);
+            
+            // Auto scroll inline editor
+            setTimeout(() => {
+                const editorArea = document.getElementById('sandbox-subpages-editor');
+                if (editorArea) {
+                    editorArea.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 60);
+        }
+    }
+
+    function handlePillarInteraction(event, knotType) {
+        if (isEditMode) {
+            // Edit Mode / Developer Sandbox: Open sliding drawer content mapped locally
+            if (event) event.preventDefault();
+            openDetailsDrawer(knotType);
+        } else {
+            // Live Public Visitors: Normal interaction opens back face listing
+            toggleCardFlip(knotType, event);
+        }
+    }
+
+    // 2. MODAL DRAWER ARCHITECTURE
+    function openDetailsDrawer(knotType) {
+        activeKnotType = knotType;
+        
+        const data = contentStorage[knotType];
+        
+        // Update Title
+        document.getElementById('drawer-main-title').innerText = data.title;
+        
+        // Populate Inputs in Sandbox
+        document.getElementById('editor-title-field').value = data.title;
+        document.getElementById('editor-body-field').value = data.body;
+        document.getElementById('editor-base-url-field').value = websiteBaseUrl;
+        
+        // Clear old visual state of iframe blocks
+        document.getElementById('embed-code-area').style.display = 'none';
+
+        // Render direct page links portal directory
+        renderDirectoryPortal(knotType, data);
+
+        // Render subpages catalog visual editor
+        renderSubpagesEditor();
+
+        // Set Tab buttons
+        const tabRow = document.getElementById('drawer-tab-row');
+        tabRow.innerHTML = '';
+        
+        const subcontentArea = document.getElementById('drawer-subcontent');
+        subcontentArea.innerHTML = '';
+
+        data.tabs.forEach((tab, index) => {
+            // Button creation
+            const buttonHtml = `
+                <button id="tab-btn-${tab.id}" class="tab-btn ${index === 0 ? 'active' : ''}" onclick="switchDrawerContentTab('${tab.id}')">
+                    ${tab.label}
+                </button>
+            `;
+            tabRow.insertAdjacentHTML('beforeend', buttonHtml);
+
+            // Tab panel creation
+            const panelHtml = `
+                <div id="tab-panel-${tab.id}" class="tab-content-panel ${index === 0 ? 'active' : ''}">
+                    ${tab.html}
+                </div>
+            `;
+            subcontentArea.insertAdjacentHTML('beforeend', panelHtml);
+        });
+
+        // Toggle state visually
+        document.getElementById('drawer-backdrop').classList.add('active');
+        document.getElementById('drawer-panel').classList.add('active');
+    }
+
+    function closeDetailsDrawer() {
+        document.getElementById('drawer-backdrop').classList.remove('active');
+        document.getElementById('drawer-panel').classList.remove('active');
+    }
+
+    function switchDrawerContentTab(tabId) {
+        // Toggle tab highlights
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        const targetBtn = document.getElementById(`tab-btn-${tabId}`);
+        if (targetBtn) targetBtn.classList.add('active');
+
+        // Toggle visibility
+        const panels = document.querySelectorAll('.tab-content-panel');
+        panels.forEach(p => p.classList.remove('active'));
+        
+        const targetPanel = document.getElementById(`tab-panel-${tabId}`);
+        if (targetPanel) targetPanel.classList.add('active');
+    }
+
+    // 3. SANDBOX ENGINE: REALTIME COMPASSIONATE MAPPING LOGIC
+    function liveUpdateContent() {
+        const inputTitle = document.getElementById('editor-title-field').value;
+        const inputBody = document.getElementById('editor-body-field').value;
+
+        // Save into current runtime storage
+        contentStorage[activeKnotType].title = inputTitle;
+        contentStorage[activeKnotType].body = inputBody;
+
+        // Push real-time updates directly into the central timeline nodes view
+        const titleElement = document.getElementById(`${activeKnotType}-title-preview`);
+        const bodyElement = document.getElementById(`${activeKnotType}-body-preview`);
+
+        if (titleElement) titleElement.innerText = inputTitle;
+        if (bodyElement) bodyElement.innerText = inputBody;
+    }
+
+    function resetVowDefaults() {
+        const defaults = {
+            faith: {
+                title: "Faith & Vocation",
+                body: "Peace and goodness! My life is deeply rooted in the Franciscan path of simplicity, born from the quiet beauty of my hometown, Malayadipatti. Here, I share my spiritual journey, pastoral reflections, and the daily grace of living as a Capuchin missionary. This is the quiet center where everything else I do finds its true purpose."
+            },
+            art: {
+                title: "Art & History",
+                body: "I believe art is a beautiful reflection of the Creator. From my roots in Tamil classical music to my current journey studying visual cinema at DBIMA in Paris, my passion is creating modern \"Digital Parables.\" Come explore my short films, audio projects, and humble attempts to tell stories of faith, humanity, and hope through the lens."
+            },
+            science: {
+                title: "Tech & AI",
+                body: "Can ancient faith walk hand-in-hand with the future? I firmly believe so. Guided by the Church’s call for ethical technology (Algorethics), I am passionate about using digital tools to serve the marginalized and scale education. Here, you'll find my work exploring how AI, secure databases, and frugal innovations can lovingly support our communities."
+            }
+        };
+
+        const def = defaults[activeKnotType];
+        document.getElementById('editor-title-field').value = def.title;
+        document.getElementById('editor-body-field').value = def.body;
+        
+        liveUpdateContent();
+    }
+
+    // 4. EXPORT ENGINE (COMPILING EMBED CODE FOR GOOGLE SITES)
+    function exportGoogleSitesBlock() {
+        const title = contentStorage[activeKnotType].title;
+        const body = contentStorage[activeKnotType].body;
+
+        const activeColorHex = '#925835';
+
+        // Formulate perfect standard standalone semantic card widget matching exactly Site design
+        const outputCode = `<!-- Fr. Joseph Vocation Card Widget -->
+<div style="background:#ffffff; border:1px solid rgba(146, 88, 53, 0.18); border-radius:12px; font-family:'Inter', sans-serif; padding:2rem; box-shadow:0 8px 24px rgba(58, 37, 23, 0.04); max-width:480px; margin:1rem auto; box-sizing:border-box;">
+  <div style="display:inline-block; padding:4px 10px; margin-bottom:12px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:${activeColorHex}; background:#f7f3eb; border-radius:4px; border:1px solid rgba(146, 88, 53, 0.15);">
+    Pillars of Vocation
+  </div>
+  <h3 style="font-family:'Playfair Display', serif; font-size:1.6rem; color:#3a2517; margin:0 0 12px 0; font-weight:700;">
+    ${title}
+  </h3>
+  <p style="font-size:0.95rem; color:#4e4035; line-height:1.7; margin:0 0 1.5rem 0;">
+    ${body}
+  </p>
+  <a href="#" style="font-size:0.8rem; font-weight:700; color:${activeColorHex}; text-decoration:none; text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid ${activeColorHex}; padding-bottom:2px;">
+    Explore Node ➔
+  </a>
+</div>`;
+
+        const codeArea = document.getElementById('embed-code-area');
+        const codeText = document.getElementById('embed-code-text');
+        document.getElementById('code-area-title').innerText = "Google Sites Card Embed Code:";
+        
+        codeText.textContent = outputCode;
+        codeArea.style.display = 'block';
+        codeArea.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function exportFullWidgetHtml() {
+        let htmlContent = "";
+        try {
+            // Try fetching the clean template from the running app server
+            const response = await fetch(window.location.origin + window.location.pathname);
+            if (response.ok) {
+                htmlContent = await response.text();
+                
+                // Reconstruct Google Sites original variables with the edited state
+                const baseUrlRegex = /(let\s+websiteBaseUrl\s*=\s*)(["'])(.*?)\2(\s*;)/;
+                htmlContent = htmlContent.replace(baseUrlRegex, `$1$2${websiteBaseUrl}$2$4`);
+                
+                const startTag = "/* === CONFIGURATION PORTALS START === */";
+                const endTag = "/* === CONFIGURATION PORTALS END === */";
+                const startIndex = htmlContent.indexOf(startTag);
+                const endIndex = htmlContent.indexOf(endTag);
+                
+                if (startIndex !== -1 && endIndex !== -1) {
+                    const beforeBlock = htmlContent.substring(0, startIndex + startTag.length);
+                    const afterBlock = htmlContent.substring(endIndex);
+                    
+                    const serializedStorage = "\n    const contentStorage = " + JSON.stringify(contentStorage, null, 4) + ";\n    ";
+                    htmlContent = beforeBlock + serializedStorage + afterBlock;
+                }
+            }
+        } catch (e) {
+            console.warn("Raw file fetch limits (sandbox context). Engaging live DOM extraction module.", e);
+        }
+        
+        // Dynamic Fallback: clean live source code reconstruction
+        if (!htmlContent) {
+            let pageHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            // Clear current transient active states in compiled export
+            pageHtml = pageHtml.replace(/class=\"([^\"]*?)\bactive\b([^\"]*?)\"/g, 'class="$1$2"');
+            pageHtml = pageHtml.replace(/class=\"([^\"]*?)\bflipped\b([^\"]*?)\"/g, 'class="$1$2"');
+            htmlContent = pageHtml;
+        }
+
+        const codeArea = document.getElementById('embed-code-area');
+        const codeText = document.getElementById('embed-code-text');
+        document.getElementById('code-area-title').innerText = "Full Page Interactive Widget HTML:";
+        
+        codeText.textContent = htmlContent;
+        codeArea.style.display = 'block';
+        codeArea.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyEmbedText() {
+        const codeText = document.getElementById('embed-code-text').textContent;
+        document.execCommand('copy'); // Using fallback as requested by system constraints, or standard navigator if allowed
+        navigator.clipboard.writeText(codeText).then(() => {
+            const buttons = document.querySelectorAll('.copy-overlay-btn');
+            buttons.forEach(btn => {
+                if (btn.innerText === 'Copy' || btn.innerText === 'Copied!') {
+                    btn.innerText = 'Copied!';
+                    btn.style.backgroundColor = 'var(--green-leaf)';
+                    setTimeout(() => {
+                        btn.innerText = 'Copy';
+                        btn.style.backgroundColor = 'var(--capuchin-dark)';
+                    }, 1500);
+                }
+            });
+        }).catch(err => {
+            console.error("Clipboard copy failed. Try selecting the text manually.", err);
+        });
+    }
+
+    function downloadEmbedText() {
+        const codeText = document.getElementById('embed-code-text').textContent;
+        const title = document.getElementById('code-area-title').innerText;
+        const isFull = title.includes("Full Page");
+        
+        const blob = new Blob([codeText], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = isFull ? "fr_joseph_interactive_deck.html" : `fr_joseph_card_${activeKnotType}.html`;
+        
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    // 6. INITIALIZE EDIT MODE DYNAMICS
+    window.addEventListener('DOMContentLoaded', () => {
+        // Resolve correct target pillar urls dynamically on load
+        updatePillarHrefs();
+        
+        // Pre-render the subpage dynamic directories on the 3D card backs
+        renderCardBackSubpages('faith');
+        renderCardBackSubpages('art');
+        renderCardBackSubpages('science');
+        
+        const sandboxBox = document.getElementById('sandbox-container');
+        if (sandboxBox && isEditMode) {
+            sandboxBox.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>

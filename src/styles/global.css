@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: "Inter", "Noto Sans Tamil", system-ui, sans-serif;
+  }
+  body {
+    @apply bg-stone-950 text-stone-100 antialiased selection:bg-amber-500/30 selection:text-amber-200;
+  }
+}
+
+/* Reader theme modes for Magnifica Humanitas & Seraphic Way of the Cross */
+.reader-surface[data-theme="dark"] {
+  @apply bg-stone-900/70 text-stone-200 border-stone-800;
+}
+.reader-surface[data-theme="sepia"] {
+  background-color: #f6efe2;
+  color: #2b2118;
+  border-color: #dfcfb3;
+}
+.reader-surface[data-theme="light"] {
+  background-color: #ffffff;
+  color: #1c1917;
+  border-color: #e7e5e4;
+}
+.reader-surface[data-theme="sepia"] .prose,
+.reader-surface[data-theme="light"] .prose {
+  --tw-prose-body: #292524;
+  --tw-prose-headings: #1c1917;
+  --tw-prose-bold: #1c1917;
+  --tw-prose-links: #b45309;
+  --tw-prose-quotes: #44403c;
+  --tw-prose-hr: #d6d3d1;
+}

@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import ReaderLayout from "../../../layouts/ReaderLayout.astro";
+
+export async function getStaticPaths() {
+  const docs = (await getCollection("writings")).filter((d) => d.slug !== "sub-trans");
+  return docs.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ReaderLayout
+  title={entry.data.title}
+  badge={entry.data.language}
+  backHref="/faith/writings"
+  backLabel="All Writings"
+>
+  <Content />
+</ReaderLayout>

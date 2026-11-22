@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import VetrisaipadalPlayer from "../../../components/react/VetrisaipadalPlayer.jsx";
+import vetriData from "../../../data/vetrisaipadal.json";
+---
+
+<BaseLayout
+  title="Vetrisaipadal — Tamil Catholic AI Karaoke (500+ Tracks)"
+  description="Searchable library of 500+ AI vocal-isolated Tamil Catholic devotional karaoke tracks by Fr. Joseph Arputha Raj OFM Cap."
+>
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <VetrisaipadalPlayer client:load data={vetriData} />
+  </div>
+</BaseLayout>

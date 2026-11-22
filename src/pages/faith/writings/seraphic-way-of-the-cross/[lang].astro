@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import ReaderLayout from "../../../../layouts/ReaderLayout.astro";
+
+export async function getStaticPaths() {
+  const editions = await getCollection("seraphic-way");
+  return editions.map((entry) => ({
+    params: { lang: entry.data.langCode },
+    props: { entry, editions },
+  }));
+}
+
+const { entry, editions } = Astro.props;
+const { Content } = await entry.render();
+
+const sidebarItems = editions
+  .sort((a, b) => a.data.englishName.localeCompare(b.data.englishName))
+  .map((e) => ({
+    href: `/faith/writings/seraphic-way-of-the-cross/${e.data.langCode}`,
+    label: `${e.data.nativeName} (${e.data.englishName})`,
+    active: e.data.langCode === entry.data.langCode,
+  }));
+---
+
+<ReaderLayout
+  title={entry.data.title}
+  subtitle="800th Anniversary of the Transitus of St. Francis of Assisi (1226–2026)"
+  badge={`${entry.data.nativeName} Edition`}
+  backHref="/faith/writings/seraphic-way-of-the-cross"
+  backLabel="All 12 Languages"
+  sidebarTitle="Switch Language"
+  sidebarItems={sidebarItems}
+>
+  <Content />
+</ReaderLayout>

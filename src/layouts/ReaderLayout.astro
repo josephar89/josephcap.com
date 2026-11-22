@@ -1,0 +1,191 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface NavItem {
+  href: string;
+  label: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  backHref: string;
+  backLabel: string;
+  sidebarTitle?: string;
+  sidebarItems?: NavItem[];
+  prev?: { href: string; label: string } | null;
+  next?: { href: string; label: string } | null;
+}
+
+const {
+  title,
+  subtitle,
+  badge,
+  backHref,
+  backLabel,
+  sidebarTitle = "Chapters",
+  sidebarItems = [],
+  prev = null,
+  next = null,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={subtitle || title}>
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Top Breadcrumb & Reader Toolbar -->
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-stone-800 pb-4">
+      <a
+        href={backHref}
+        class="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 hover:text-amber-300"
+      >
+        ← {backLabel}
+      </a>
+
+      <!-- Font Size & Theme Controls -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="inline-flex items-center rounded-lg border border-stone-800 bg-stone-900 p-1 text-xs">
+          <button id="font-dec" type="button" class="rounded px-2.5 py-1 text-stone-300 hover:bg-stone-800 hover:text-white" title="Decrease font size">A-</button>
+          <button id="font-reset" type="button" class="rounded px-2 py-1 text-stone-400 hover:bg-stone-800 hover:text-white" title="Default font size">A</button>
+          <button id="font-inc" type="button" class="rounded px-2.5 py-1 text-stone-300 hover:bg-stone-800 hover:text-white" title="Increase font size">A+</button>
+        </div>
+
+        <div class="inline-flex items-center rounded-lg border border-stone-800 bg-stone-900 p-1 text-xs">
+          <button data-set-theme="dark" type="button" class="rounded px-2.5 py-1 text-stone-300 hover:bg-stone-800">Dark</button>
+          <button data-set-theme="sepia" type="button" class="rounded px-2.5 py-1 text-amber-200 hover:bg-stone-800">Sepia</button>
+          <button data-set-theme="light" type="button" class="rounded px-2.5 py-1 text-stone-100 hover:bg-stone-800">Light</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+      <!-- Optional Sidebar TOC -->
+      {sidebarItems.length > 0 && (
+        <aside class="lg:col-span-3">
+          <div class="sticky top-24 rounded-2xl border border-stone-800 bg-stone-900/60 p-4">
+            <p class="mb-3 text-xs font-bold uppercase tracking-wider text-amber-400">
+              {sidebarTitle}
+            </p>
+            <nav class="flex max-h-[65vh] flex-col space-y-1 overflow-y-auto pr-1">
+              {sidebarItems.map((item) => (
+                <a
+                  href={item.href}
+                  class={`rounded-lg px-3 py-2 text-xs leading-snug transition ${
+                    item.active
+                      ? "bg-amber-500/20 font-semibold text-amber-300"
+                      : "text-stone-400 hover:bg-stone-800/70 hover:text-stone-100"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </aside>
+      )}
+
+      <!-- Main E-Reader Paper Surface -->
+      <article class={sidebarItems.length > 0 ? "lg:col-span-9" : "mx-auto w-full max-w-4xl lg:col-span-12"}>
+        <div
+          id="reader-surface"
+          data-theme="dark"
+          class="reader-surface rounded-2xl border p-6 shadow-xl transition-colors duration-200 sm:p-10"
+        >
+          <header class="mb-8 border-b border-current/15 pb-6">
+            {badge && (
+              <span class="mb-3 inline-block rounded-full border border-amber-500/40 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-500">
+                {badge}
+              </span>
+            )}
+            <h1 class="text-2xl font-extrabold leading-tight sm:text-3xl">
+              {title}
+            </h1>
+            {subtitle && (
+              <p class="mt-2 text-sm opacity-75">{subtitle}</p>
+            )}
+          </header>
+
+          <div
+            id="reader-prose"
+            class="prose prose-invert max-w-none leading-loose prose-headings:scroll-mt-24 prose-a:text-amber-400 prose-img:mx-auto prose-img:rounded-xl prose-img:shadow-lg"
+            style="font-size: 17px;"
+          >
+            <slot />
+          </div>
+
+          <!-- Chapter Prev/Next Footer -->
+          {(prev || next) && (
+            <div class="mt-12 grid grid-cols-1 gap-4 border-t border-current/15 pt-6 sm:grid-cols-2">
+              <div>
+                {prev && (
+                  <a
+                    href={prev.href}
+                    class="block rounded-xl border border-amber-500/30 p-4 text-left transition hover:bg-amber-500/10"
+                  >
+                    <span class="block text-[11px] uppercase tracking-wider opacity-60">← Previous</span>
+                    <span class="mt-1 block text-sm font-semibold text-amber-500">{prev.label}</span>
+                  </a>
+                )}
+              </div>
+              <div>
+                {next && (
+                  <a
+                    href={next.href}
+                    class="block rounded-xl border border-amber-500/30 p-4 text-right transition hover:bg-amber-500/10"
+                  >
+                    <span class="block text-[11px] uppercase tracking-wider opacity-60">Next →</span>
+                    <span class="mt-1 block text-sm font-semibold text-amber-500">{next.label}</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script is:inline>
+    const surface = document.getElementById("reader-surface");
+    const prose = document.getElementById("reader-prose");
+    let size = Number(localStorage.getItem("jc_reader_size") || 17);
+    const savedTheme = localStorage.getItem("jc_reader_theme") || "dark";
+
+    function applyFont() {
+      if (prose) prose.style.fontSize = size + "px";
+      localStorage.setItem("jc_reader_size", String(size));
+    }
+    function applyTheme(theme) {
+      if (!surface || !prose) return;
+      surface.setAttribute("data-theme", theme);
+      if (theme === "dark") {
+        prose.classList.add("prose-invert");
+      } else {
+        prose.classList.remove("prose-invert");
+      }
+      localStorage.setItem("jc_reader_theme", theme);
+    }
+
+    applyFont();
+    applyTheme(savedTheme);
+
+    document.getElementById("font-dec")?.addEventListener("click", () => {
+      size = Math.max(13, size - 2);
+      applyFont();
+    });
+    document.getElementById("font-reset")?.addEventListener("click", () => {
+      size = 17;
+      applyFont();
+    });
+    document.getElementById("font-inc")?.addEventListener("click", () => {
+      size = Math.min(26, size + 2);
+      applyFont();
+    });
+    document.querySelectorAll("[data-set-theme]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.getAttribute("data-set-theme") || "dark");
+      });
+    });
+  </script>
+</BaseLayout>

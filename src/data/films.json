@@ -1,0 +1,61 @@
+{
+  "dbimaFilms": [
+    {
+      "id": "the-barren-field",
+      "title": "The Barren Field",
+      "alternateTitle": "தரிசு நிலம் • Le Champ Stérile",
+      "year": "2025",
+      "status": "Released",
+      "language": "Tamil (French & English Subtitles)",
+      "institution": "DBIMA — Don Bosco International Media Academy, Paris",
+      "youtubeId": "9KjL8u_1ip4",
+      "tagline": "A barren field is not the end of life—it is quiet waiting for a new seed.",
+      "synopsis": "In a quiet village church in Tamil Nadu, Priya—five years into marriage without a child—is haunted by guilt over a past mistake and pushed to the brink of despair. Her encounter with Capuchin priest Fr. Prabhu (Br. Johnson of the Créteil fraternity) transforms confession into renewed hope.",
+      "directorNotes": "Selected out of 15 student screenplays at DBIMA Paris for full-class production, marking the first-ever Tamil-language film directed at the academy. Generative AI served as the production office—bridging the language divide with AI storyboards, automated schedules, real-time on-set translation, French subtitles, and a Suno AI score.",
+      "techStack": [
+        "Gemini Pro (Script & Set Translation)",
+        "AI Storyboarding",
+        "Google AI Studio (French Subtitles)",
+        "Suno AI (Original Score)"
+      ]
+    },
+    {
+      "id": "dbima-halloween",
+      "title": "DBIMA Halloween",
+      "alternateTitle": "Zero-Budget Fully AI Short Film",
+      "year": "2025",
+      "status": "Festival Entry",
+      "language": "English / Visual Cinema",
+      "institution": "DBIMA Film Festival, Paris",
+      "youtubeId": "Tb4jca_gwuc",
+      "tagline": "From blank page to finalized cinematic render in 3 hours—at zero dollar budget.",
+      "synopsis": "An experimental, end-to-end generative AI film created for the DBIMA Film Festival in Paris, integrating digital-twin likeness into artificially generated scenes with consistent cinematic lighting.",
+      "directorNotes": "Completed in 3 hours total work, earning critical acclaim and prompting DBIMA to invite Fr. Joseph to teach AI creative-disruption techniques to Master's peers.",
+      "techStack": [
+        "Gemini (Instant Script Conceptualization)",
+        "Google Flow (Digital-Twin Integration)",
+        "End-to-End Generative Cinema"
+      ]
+    },
+    {
+      "id": "jesus-antivirus",
+      "title": "Jesus: an Anti-Virus",
+      "alternateTitle": "Hybrid AI Studio • Eden OS",
+      "year": "2026",
+      "status": "Work in Progress",
+      "language": "Sci-Fi / Digital Parable",
+      "institution": "DBIMA Paris • Solo Hybrid AI Studio",
+      "youtubeId": null,
+      "resourceUrl": "https://drive.google.com/drive/folders/15Pd7YE8soTG06OIS8ssCAB2z_p6gQrpd?usp=drive_link",
+      "tagline": "When the human network is corrupted, only a divine patch can restore the system.",
+      "synopsis": "A technically ambitious narrative combining live-action 4K cinematography with fully functional interactive on-screen software ('Eden OS') built from scratch via Gemini Code.",
+      "directorNotes": "Architected as a playable HTML operating system through 25 prompt-engineering iterations so actors could interact live on set, paired with Google Veo 3, Flow 3, RTX 3090 video-to-video VFX, and DaVinci Resolve Studio 20.",
+      "techStack": [
+        "Gemini Code (Eden OS HTML Emulator)",
+        "Google Veo 3 & Flow 3",
+        "RTX 3090 Video-to-Video VFX",
+        "DaVinci Resolve Studio 20"
+      ]
+    }
+  ]
+}

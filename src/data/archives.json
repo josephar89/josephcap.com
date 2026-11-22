@@ -1,0 +1,672 @@
+{
+  "philosophy": {
+    "institute": "St. Joseph's Philosophical Institute (2013–2016)",
+    "groups": [
+      {
+        "category": "Western Philosophy",
+        "items": [
+          {
+            "title": "Introduction to Philosophy",
+            "url": "https://drive.google.com/file/d/1HIXz8sgiKTuWBQ46PrGzgUl-yfKZ389h/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Pre-Socratic Philosophers",
+            "url": "https://drive.google.com/file/d/1DcAhs5XdsQB5Mm9loIIx9exZztyvzXrx/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Plato & Aristotle",
+            "url": "https://drive.google.com/file/d/1A_MgaF_qhcW0vM3qtghLi3YfGOqjpBqG/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Medieval Philosophy",
+            "url": "https://drive.google.com/file/d/1N4MRa8neLWwmbAJDaZlAvYmjmuXAHvYu/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Modern Philosophy",
+            "url": "https://drive.google.com/file/d/1mAt7RXarKwlKXQcJRMJV3U9LA-bdn9Ml/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Post Modernism",
+            "url": "https://drive.google.com/file/d/1pdirHjDsFLt2gwaGVZjCCtjq-7ZcOzz1/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Branches of Philosophy",
+        "items": [
+          {
+            "title": "Anthropology",
+            "url": "https://drive.google.com/file/d/1ydb1E2YE9qFEgf-I5UzDfQaY7bfOFpyp/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Cosmology",
+            "url": "https://drive.google.com/file/d/1mWw2_3QCSP83fkThE9ij4Xf-9s0czJta/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Ethics",
+            "url": "https://drive.google.com/file/d/1VK1uDiAK3HgpBiN8yrG4geHLGisOpSba/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Existentialism",
+            "url": "https://drive.google.com/file/d/15mLNWGk_NPh1IBbvg1cR--H-SSrC87NT/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Idealism",
+            "url": "https://drive.google.com/file/d/1ugIbvFT4ixz9kEcvOymrN-9EiISGmqko/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Logic",
+            "url": "https://drive.google.com/file/d/14z3FmMSfkU9HLXd-GBlIBCk0qyagNnqZ/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Marxism",
+            "url": "https://drive.google.com/file/d/1tEbiwwaOpM4oOExZefWroVz_fA_ZHBGc/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Metaphysics",
+            "url": "https://drive.google.com/file/d/17hJVSu41YMkijX9X7SbNxqFKV6CyPI1f/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Phenomenology",
+            "url": "https://drive.google.com/file/d/1GVSimXpWl818DpPgYAj30rNBbRw4CmcO/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Philosophy of Language",
+            "url": "https://drive.google.com/file/d/1DBS5-6z77dlnyOPP2_GgaXUhJNO8XLtu/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Philosophy of Religion & God",
+            "url": "https://drive.google.com/file/d/1_r-IETUegsrnSURoKbX0ZAER8G9TGVYS/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Positivism",
+            "url": "https://drive.google.com/file/d/1fPlhuFOnMj1AXUZWPdfXmEi-VT-_z-wP/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Post-Critical Philosophy of God",
+            "url": "https://drive.google.com/file/d/15ufeo953vXclbanAZ3uGiurQ6EfaPFH2/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Socio-Political Philosophy",
+            "url": "https://drive.google.com/file/d/1C1NEUsVhK3Fu7RnJ-KUWFAYLzfNdWTZo/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Sociology",
+            "url": "https://drive.google.com/file/d/1Ops3L-RBAPthDtZGq5__RVZfX9fcRwEi/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "World Religions",
+            "url": "https://drive.google.com/file/d/1rfBEdyI-3_Nmf6vtAasoovSA-CZWhTUQ/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Indian Philosophy",
+        "items": [
+          {
+            "title": "Introduction to Indian Philosophy",
+            "url": "https://drive.google.com/file/d/15AgOkgDwjbefS8WCr8EUQGKhvAXj27Kc/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Indian Classical Systems",
+            "url": "https://drive.google.com/file/d/1HIg2EYQvl9peDVo2ZfCXP65TayBYlqp-/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Contemporary Indian Philosophy",
+            "url": "https://drive.google.com/file/d/1jqc2Lgw4vBcmDSpdgP6Ye2ADGlDRKnCs/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Tamil Thinkers",
+            "url": "https://drive.google.com/file/d/1dPLJ1lCOB2ttR_00Ncj3s58lPWPbjbN6/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Gita Upanishad",
+            "url": "https://drive.google.com/file/d/1grBcotHVQ80DMNQk9PTfIb0j-ci1mWOv/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Classical Works",
+        "items": [
+          {
+            "title": "Nichomachean Ethics",
+            "url": "https://drive.google.com/file/d/1n0_o82L_ekIIp_0Suzs3y16zJoCvTdpK/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Meditations of the First Philosophy",
+            "url": "https://drive.google.com/file/d/11K8JRaUWAi1auaq2F8QPNZ2Y10YXbCfF/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Descartes Meditations _ Critique of Pure Reason_compressed",
+            "url": "https://drive.google.com/file/d/16Xs7-26LQzwriR6Cprri40l1iUgw-Mt1/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Critique of Pure Reason",
+            "url": "https://drive.google.com/file/d/1csE29Ace1l1PguwJ89i61t0Aiuj-HWoV/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Scientific Papers",
+        "items": [
+          {
+            "title": "TECHNO-SAPIENS: Human Evolution in Technological Era",
+            "url": "https://drive.google.com/file/d/1gvfIH5LBUPShKbgCRPi4oL6iY0uPvKIG/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MEDIACRACY",
+            "url": "https://drive.google.com/file/d/1WxJjRBssq3-9D274scK-UIEJCQUWH942/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "PLATO - A Holistic Philosopher",
+            "url": "https://drive.google.com/file/d/1Qxy4xkKP3I28GjpSc14IC8KGIaYDuTA4/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MILESIAN PHILOSOPHERS - Methodology Assignment",
+            "url": "https://drive.google.com/file/d/1CjNABx9Elg9xRVKaiTU3C4e6YAGEZs6U/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Psychology",
+        "items": [
+          {
+            "title": "General Psychology",
+            "url": "https://drive.google.com/file/d/1i7INgSf3QzXzz-tcCCfUesHpxlfiW0Zt/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Enneagram",
+            "url": "https://drive.google.com/file/d/1s9Yf0xSDumKiE3LNHRHHVkzTYgkU4Pjo/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Healing the Inner Child",
+            "url": "https://drive.google.com/file/d/1V2Xe_tjShQwL09Z2PaFWAbdmf33GBP5B/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "Psychotherapy - Unit 1",
+            "url": "https://drive.google.com/file/d/1Fe1CWp8yt_LMqZTSwBbDfSb-sm5gy7rK/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      }
+    ]
+  },
+  "theology": {
+    "institute": "Francesco Theological Institute (2017–2020)",
+    "groups": [
+      {
+        "category": "Sacred Scripture",
+        "items": [
+          {
+            "title": "SS01 INTRO. TO BIBLICAL GREEK",
+            "url": "https://drive.google.com/file/d/13qtNRT23XJz9I7t-aXllTETpYl-HqjLh/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS02 INTRO. TO BIBLICAL HEBREW",
+            "url": "https://drive.google.com/file/d/1MR5nEJh-UZ_HfH6KTWS2091CDns34N2J/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS04 INTRODUCTION TO THE BIBLE",
+            "url": "https://drive.google.com/file/d/1YZYZV_IVBM7gZD62Tx_sJ0TTsD5gFxLm/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS05 HISTORY OF ISRAEL",
+            "url": "https://drive.google.com/file/d/1RQmyu4TUp0epb6SuAjy5kV4C3xG8H5vY/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS06 PENTATEUCH",
+            "url": "https://drive.google.com/file/d/1Py81SDSu-9OdrKiBtgf0-nRSFkit5VY-/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS07 HISTORICAL BOOKS",
+            "url": "https://drive.google.com/file/d/1vnr7J0tH_m_WuktiVbNFsKeTMSlmnZLd/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS08 PSALMS",
+            "url": "https://drive.google.com/file/d/1pJVVd6_vVnBCO1O2Y-R7uktzhELSdL4l/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS09 WISDOM LITERATURE",
+            "url": "https://drive.google.com/file/d/1gyDEZnnPn0q8gSW_4lj9xXyutJWaLC7G/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS10 PROPHETS",
+            "url": "https://drive.google.com/file/d/1pKJw9xXc4CUuOuj5rx-b_5dG2G4cL-j3/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS11 INTERTESTAMENTAL LITERATURE",
+            "url": "https://drive.google.com/file/d/1hR6__OWZhN2gROqdEq0WP_JkTTHCgF2n/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS12 ST. MATTHEW & ST. MARK GOSPELS",
+            "url": "https://drive.google.com/file/d/1NS3HF1K1phMVSB1MlOGmRFsAQ8rJNKDE/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS13 LUKE & ACTS",
+            "url": "https://drive.google.com/file/d/1LiDpkn3oIi0ACNpXiXXOGz3Jpmy8sTov/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS14 JOHANNINE LITERATURE",
+            "url": "https://drive.google.com/file/d/1ecR7PXakVzdRICA7ME3ScMfuxFjOhjbi/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS15 INFANCY NARRATIVES",
+            "url": "https://drive.google.com/file/d/1lDnfXken3joPZ05dy-1mjus_O8taO8vm/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS16 PARABLES AND MIRACLES",
+            "url": "https://drive.google.com/file/d/1zSHFRmcQ_8a7QocTHEGenHFRkwXi4ReI/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS17 SERMON ON THE MOUNT",
+            "url": "https://drive.google.com/file/d/1oadSvH63j-P_bRcdMf_Semci15Bj7Ur_/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS18 PASSION NARRATIVES",
+            "url": "https://drive.google.com/file/d/130mpBZzh45-OoKRU5GjoNPHBhzcBMkSo/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS19 PAULINE LITERATURE",
+            "url": "https://drive.google.com/file/d/1in4gF4LCZG1OHFqSu2-mI831kjCD_Nwg/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS20 LETTER TO THE HEBREWS",
+            "url": "https://drive.google.com/file/d/1in4gF4LCZG1OHFqSu2-mI831kjCD_Nwg/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SS22 BOOK OF REVELATION",
+            "url": "https://drive.google.com/file/d/1y7YKfFiGx1AcnZfrl_mOW6Pxov3uZapa/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Systematic Theology",
+        "items": [
+          {
+            "title": "ST01 INTRODUCTION TO THEOLOGY",
+            "url": "https://drive.google.com/file/d/1nE--T4sG5dt-O6WPrsjk6uPDZ3pK8MD5/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST02 INTRODUCTION TO SACRAMENTS",
+            "url": "https://drive.google.com/file/d/1n5EqZJ4RNsbP7hdzHckQmClbTMO9v8uy/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST03 FAITH AND REVELATION",
+            "url": "https://drive.google.com/file/d/1MFf906GdGwZPIqfYuth8mJAv0abRqhlg/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST04 THEOLOGY OF THE HOLY TRINITY",
+            "url": "https://drive.google.com/file/d/12NrEG-W_CxK4I4zGgCtfmSWeTC8RvWHP/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST05 CHRISTOLOGY",
+            "url": "https://drive.google.com/file/d/1Uh3YiivYxVKSz8EKngPNypC5PLq-f4Rv/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST06 PNEUMATOLOGY",
+            "url": null,
+            "available": false
+          },
+          {
+            "title": "ST07 MARIOLOGY",
+            "url": "https://drive.google.com/file/d/13W5Rg5N7hpu8CZUk3qb5i1dPEV0Uqu42/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST08 CHRISTIAN ANTHROPOLOGY",
+            "url": "https://drive.google.com/file/d/1Ypz6Z3ik8SRafLbHWmqlboLhd1ehC1kZ/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST09 ECCLESIOLOGY",
+            "url": "https://drive.google.com/file/d/1xa36eISL4QldtYTsf-hsOjGhwstUl_Ov/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST10 HOLY EUCHARIST",
+            "url": "https://drive.google.com/file/d/1Xkud_QfXvkvVk7zx5d6ioGmdFx8FrsZz/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST11 BAPTISM AND CONFIRMATION",
+            "url": null,
+            "available": false
+          },
+          {
+            "title": "ST12 RECONCILIATION & ANOINTING",
+            "url": "https://drive.google.com/file/d/10yetstIcZ8BTGgs6_5ELi2m6HxQ06l0C/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST13 ESCHATOLOGY",
+            "url": "https://drive.google.com/file/d/1Sx4WxO4r0xb59XnY-nZ5mzZT2FkKN9rU/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST14 PRIESTHOOD",
+            "url": "https://drive.google.com/file/d/1f1eV7LQcMm8SMh7H-_HGIH7xblq_jouf/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST15 ECUMENICALCOUNCILS",
+            "url": "https://drive.google.com/file/d/12nKtJkL9HU5xkvbdM33XWObX1Q2uzUy9/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ST16 PAPAL DOCUMENTS",
+            "url": "https://drive.google.com/file/d/1QnGewngrAbBYg7TvzmTv0KmVWp_8v1fh/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Moral Theology",
+        "items": [
+          {
+            "title": "MT01 FUNDAMENTAL MORALS PART I",
+            "url": "https://drive.google.com/file/d/17gxYzZz-OIGt1p-Lfi84MlaZUASZ5Fdx/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT02 FUNDAMENTAL MORALS PART II",
+            "url": "https://drive.google.com/file/d/1mcx5dyyrk652qzAJl09HwFAHP1-gqac7/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT03 VIRTUES",
+            "url": "https://drive.google.com/file/d/1Fmd965eZ0s8mp-5SUB3IlIiSucGHb_Oo/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT04 SOCIAL ETHICS",
+            "url": "https://drive.google.com/file/d/15viIfGvBggeLPhWyTS7bstTWDg3i_auH/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT05 SOCIAL TEACHINGS & JUSTICE",
+            "url": "https://drive.google.com/file/d/1AhqoTvU8lJrdvTWWcdpk8AUd_ZZecuO2/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT06 BIO-MEDICAL ETHICS",
+            "url": "https://drive.google.com/file/d/1YG__d7AufDdKPi_TCX6CeDJob7oLCzo2/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT07 ECO-ETHICS",
+            "url": "https://drive.google.com/file/d/1jE9b2MmNOoWK7RSgU_3pYSZIk6FeNNLL/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MT08 FRIENDSHIP AND RESPONSIBILITY",
+            "url": null,
+            "available": false
+          },
+          {
+            "title": "MT09 SEXUALITY AND MARRIAGE",
+            "url": null,
+            "available": false
+          },
+          {
+            "title": "MT11 SIN AND RECONCILIATION",
+            "url": "https://drive.google.com/file/d/1pXXaKfyHQ1WSO54eyVkf4Ao92zFvgXKU/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Canon Law",
+        "items": [
+          {
+            "title": "CL01 GENERAL NORMS - Can. 1-203",
+            "url": "https://drive.google.com/file/d/10QocexvsauygImaA_tzHCwX_VwTCKsM-/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL02 PEOPLE OF GOD – Can. 204-572",
+            "url": "https://drive.google.com/file/d/15ttLIYaupTeu-5uXU90b8EUDLSt3WeLO/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL04 JUDICIAL PROCESS",
+            "url": "https://drive.google.com/file/d/1jRsZ3gGLf_fg6_xNYzAtbHUy4VxNI6Ip/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL05 CANON LAW ON SACRAMENTS",
+            "url": "https://drive.google.com/file/d/12KRB9CbHqdznkstVLch4NWXmDvPy-IHG/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL06 MARRIAGE – Can. 1055-1165",
+            "url": "https://drive.google.com/file/d/15dOFTPoCqZyBg5eTB7F3bgn1CFrnI4k9/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL07 CONSECRATED LIFE",
+            "url": "https://drive.google.com/file/d/1NImGVbqOAjoOZKm3nEr9LL5_I19aP4pc/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL08 TEMPORAL GOODS",
+            "url": "https://drive.google.com/file/d/1WmMRAUE8sK_KYe1v5wKFvuWno62PiyJQ/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CL09 AD AUDIENDAS",
+            "url": "https://drive.google.com/file/d/1gczYHRDvQh5qLxl_MZ8bQDb6-tmZh1nx/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Church History",
+        "items": [
+          {
+            "title": "CH01 PATROLOGY",
+            "url": "https://drive.google.com/file/d/1qSaaX0orHn-t74I9adosoWyL5G60echA/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CH02 ANCIENT HISTORY OF THE CHURCH",
+            "url": "https://drive.google.com/file/d/16n6nKwvuK4eXh6WeP6w8uUX1tW9u2uJ3/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CH03 MEDIEVAL CHURCH HISTORY",
+            "url": "https://drive.google.com/file/d/1_oXplJDwplCa7BkwtDWGfG3sQ-d76nvI/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "CH04 MODERN CHURCH HISTORY",
+            "url": null,
+            "available": false
+          },
+          {
+            "title": "CH05 CHRISTIANITY IN INDIA",
+            "url": "https://drive.google.com/file/d/1UzdDlHp8-EA58iXvQIujO0aCw8Pr4ItC/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Missiology",
+        "items": [
+          {
+            "title": "MIS01 INTRO. TO MISSIOLOGY",
+            "url": "https://drive.google.com/file/d/1ftYiFGFl2Gf2Gw8PRnEiowO4Fy38BRJR/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "MIS02 RELIGIOUS PLURALISM",
+            "url": "https://drive.google.com/file/d/1d31iLUfWQcrBWHCNlmxncu7jD2vJfGwe/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Liturgy",
+        "items": [
+          {
+            "title": "LITO1 LITURGY OF THE SACRAMENTS",
+            "url": "https://drive.google.com/file/d/11TTqoxy6gqBjnWwPwp8eu4mIt2ypmQs6/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "LITO2 LITURGY OF THE MASS",
+            "url": "https://drive.google.com/file/d/17epT1oi50OUC89p83W8v7hVDZ0V2SJo3/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "LITO3 LITURGY OF THE HOURS",
+            "url": "https://drive.google.com/file/d/1IaM6AUnhaSJvBmkjJowRgeAp_1gJxxfe/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Spirituality",
+        "items": [
+          {
+            "title": "SPI01 HISTORY OF SPIRITUALITY",
+            "url": "https://drive.google.com/file/d/1msmp_qgdAeVooBAlCy1ph-Ksg1lWWYjZ/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SPI03 ASCETICISM",
+            "url": "https://drive.google.com/file/d/1RGj6qrNoZ5zDb9u-hIzsZbpW4-c9Q2X3/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "SPI04 INDIAN CHRISTIAN SPIRITUALITY",
+            "url": "https://drive.google.com/file/d/1xbXoRv8LR72cNd2NFXMRryzuIB989k1H/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "FRA01 FRANCISCAN MOVEMENTS",
+            "url": "https://drive.google.com/file/d/197z_xcVEWZ6qc75QfhO_EA3c-XeeL4Tz/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "INTER - DISCIPLINARY",
+        "items": [
+          {
+            "title": "ID01 INTRODUCTION TO HOMILETICS",
+            "url": "https://drive.google.com/file/d/1RLkTY29-3WEH8f1vdEol0URAUKi7VxJa/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ID02 THE PATTERN OF EVANGELISATION",
+            "url": "https://drive.google.com/file/d/1Rbb5MArNydmDSzN6_LStj78t2rB48qc6/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ID03 THEOLOGY OF SOCIAL COMMUNICATION",
+            "url": "https://drive.google.com/file/d/18jnLvuU5w1yp4RMd0nis9govfGP21xv7/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Electives",
+        "items": [
+          {
+            "title": "ELE01 HERMENEUTICS",
+            "url": "https://drive.google.com/file/d/1uRLozTnbAP-1FvEq1mSCwZTmUxvKohQN/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ELE02 KENOSIS",
+            "url": "https://drive.google.com/file/d/1RSN0lNrnqcZG8vuQdPa5Uj0rh95vYvI5/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ELE03 ECOLOGY & CATECHISIS",
+            "url": "https://drive.google.com/file/d/1C31YAlMHRet3g-fUhae-miasPoKUCxrW/view?usp=drive_link",
+            "available": true
+          },
+          {
+            "title": "ELE04 COMMUNICATION AND SYNTHESIS",
+            "url": "https://drive.google.com/file/d/1LW1bJQXkQ8l0Y9qsPvMs24PVB7m95QdW/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      },
+      {
+        "category": "Scientific Paper",
+        "items": [
+          {
+            "title": "INTERNET INTER-FAITH INTEGRITY",
+            "url": "https://drive.google.com/file/d/1cglxNtQBdnsufaNHBmgG1ixpTe65L_Lb/view?usp=drive_link",
+            "available": true
+          }
+        ]
+      }
+    ]
+  }
+}

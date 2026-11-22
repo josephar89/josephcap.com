@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import ReaderLayout from "../../../layouts/ReaderLayout.astro";
+
+export async function getStaticPaths() {
+  const chapters = (await getCollection("magnifica-humanitas")).sort(
+    (a, b) => a.data.order - b.data.order
+  );
+  return chapters.map((entry, idx) => ({
+    params: { slug: entry.slug },
+    props: {
+      entry,
+      chapters,
+      prevEntry: idx > 0 ? chapters[idx - 1] : null,
+      nextEntry: idx < chapters.length - 1 ? chapters[idx + 1] : null,
+    },
+  }));
+}
+
+const { entry, chapters, prevEntry, nextEntry } = Astro.props;
+const { Content } = await entry.render();
+
+const sidebarItems = chapters.map((c) => ({
+  href: `/faith/magnifica-humanitas/${c.slug}`,
+  label: c.data.title,
+  active: c.slug === entry.slug,
+}));
+---
+
+<ReaderLayout
+  title={entry.data.title}
+  subtitle="மாண்புமிகு மனிதகுலம் — Magnifica Humanitas (Pope Leo XIV)"
+  badge="Magnifica Humanitas • Tamil Edition"
+  backHref="/faith/magnifica-humanitas"
+  backLabel="Encyclical Index"
+  sidebarTitle="மடல் உள்ளடக்கம்"
+  sidebarItems={sidebarItems}
+  prev={prevEntry ? { href: `/faith/magnifica-humanitas/${prevEntry.slug}`, label: prevEntry.data.title } : null}
+  next={nextEntry ? { href: `/faith/magnifica-humanitas/${nextEntry.slug}`, label: nextEntry.data.title } : null}
+>
+  <Content />
+</ReaderLayout>

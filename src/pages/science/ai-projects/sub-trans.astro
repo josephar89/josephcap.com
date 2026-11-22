@@ -1,0 +1,18 @@
+---
+import { getEntry } from "astro:content";
+import ReaderLayout from "../../../layouts/ReaderLayout.astro";
+
+const entry = await getEntry("writings", "sub-trans");
+const rendered = entry ? await entry.render() : null;
+const Content = rendered?.Content;
+---
+
+<ReaderLayout
+  title={entry?.data.title || "Contextual Subtitle Translation Case Study"}
+  subtitle="Cloud-based AI Pipeline (Google Colab T4 + Gemini 2.5 Flash + DaVinci Resolve 20)"
+  badge="AI Engineering Case Study"
+  backHref="/science/ai-projects"
+  backLabel="All AI Projects"
+>
+  {Content ? <Content /> : <p>Run migrate_bundle.py to populate this case study.</p>}
+</ReaderLayout>

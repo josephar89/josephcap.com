@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WorkshopExplorer from "../../components/react/WorkshopExplorer.jsx";
+import workshopsData from "../../data/workshops.json";
+---
+
+<BaseLayout
+  title="Global AI Literacy Initiative — Workshops"
+  description="15+ hands-on AI literacy workshops facilitated across India, France, Italy, and Cameroon for educators, PhD scholars, seminarians, and filmmakers."
+>
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8 border-b border-stone-800 pb-6">
+      <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Global AI Literacy Initiative</p>
+      <h1 class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">International AI Workshops</h1>
+      <p class="mt-2 max-w-3xl text-sm text-stone-400">
+        Democratizing ethical AI skills across borders—from PhD researchers in India and cinema students in Paris to religious congregations in Rome and Cameroon.
+      </p>
+    </div>
+    <WorkshopExplorer client:load data={workshopsData} />
+  </div>
+</BaseLayout>

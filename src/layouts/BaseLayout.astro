@@ -1,0 +1,173 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Personal portal of Fr. Joseph Arputha Raj OFM Cap — Capuchin Priest, DBIMA Paris Filmmaker, Tamil Sacred Musician, and Global AI Educator.",
+  ogImage = "https://lh3.googleusercontent.com/d/1WKD-aqy7hxTtGc4Us16XzKQHZZgzhjSJ",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/faith", label: "Faith" },
+  { href: "/art/cinema", label: "Cinema" },
+  { href: "/art/music/vetrisaipadal", label: "Music & Karaoke" },
+  { href: "/science/ai-projects", label: "AI Lab" },
+  { href: "/science/ai-workshops", label: "Workshops" },
+  { href: "/about-me", label: "About Me" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Fr. Joseph Arputha Raj OFM Cap</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | Fr. Joseph Arputha Raj`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex min-h-screen flex-col bg-stone-950 text-stone-100">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 border-b border-stone-800/80 bg-stone-950/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+        <a href="/" class="group flex items-center gap-3">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl border border-amber-500/40 bg-amber-500/15 font-bold text-amber-400 transition group-hover:bg-amber-500 group-hover:text-stone-950">
+            JR
+          </div>
+          <div>
+            <p class="text-sm font-bold tracking-tight text-white">
+              Fr. Joseph Arputha Raj
+            </p>
+            <p class="text-[11px] font-medium text-amber-400/90">
+              OFM Cap • Faith • Cinema • AI
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? currentPath === "/"
+                : currentPath.startsWith(link.href);
+            return (
+              <a
+                href={link.href}
+                class={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
+                  isActive
+                    ? "bg-amber-500/15 text-amber-300"
+                    : "text-stone-300 hover:bg-stone-900 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Toggle navigation menu"
+          class="inline-flex items-center justify-center rounded-lg border border-stone-800 bg-stone-900 p-2 text-stone-300 hover:text-white lg:hidden"
+        >
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div id="mobile-menu" class="hidden border-t border-stone-800 bg-stone-950 px-4 py-3 lg:hidden">
+        <div class="flex flex-col space-y-1">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="rounded-lg px-3 py-2 text-sm font-medium text-stone-300 hover:bg-stone-900 hover:text-amber-300"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-stone-800/80 bg-stone-950/95">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
+        <div>
+          <p class="text-base font-bold text-white">Fr. Joseph Arputha Raj OFM Cap</p>
+          <p class="mt-2 text-xs leading-relaxed text-stone-400">
+            "எல்லாருக்கும் எல்லாமாக" — 1 கொரி 9:22.<br />
+            Bridging Franciscan spirituality, visual cinema at DBIMA Paris, Tamil devotional heritage, and ethical Generative AI.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 text-xs">
+          <div class="space-y-2">
+            <p class="font-semibold uppercase tracking-wider text-amber-400">Explore</p>
+            <ul class="space-y-1.5 text-stone-400">
+              <li><a href="/faith/magnifica-humanitas" class="hover:text-white">Magnifica Humanitas</a></li>
+              <li><a href="/faith/writings/seraphic-way-of-the-cross" class="hover:text-white">Seraphic Way (12 Langs)</a></li>
+              <li><a href="/faith/archives" class="hover:text-white">Philosophy & Theology</a></li>
+              <li><a href="/art/history" class="hover:text-white">Malayadipatty & Family Tree</a></li>
+            </ul>
+          </div>
+          <div class="space-y-2">
+            <p class="font-semibold uppercase tracking-wider text-amber-400">Media & AI</p>
+            <ul class="space-y-1.5 text-stone-400">
+              <li><a href="/art/music/vetrisaipadal" class="hover:text-white">Vetrisaipadal Karaoke</a></li>
+              <li><a href="/art/music/albums" class="hover:text-white">Original Albums</a></li>
+              <li><a href="/art/cinema" class="hover:text-white">DBIMA Paris Films</a></li>
+              <li><a href="/science/ai-workshops" class="hover:text-white">Global AI Workshops</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-stone-400">
+          <p class="font-semibold uppercase tracking-wider text-amber-400">Connect</p>
+          <p>Fraternité des Capucins, 32 rue Boissonade, 75014 Paris / Tamil Nadu, India</p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="mailto:josephar89@gmail.com" class="rounded-md border border-stone-800 px-2.5 py-1 hover:border-amber-500/60 hover:text-white">Email</a>
+            <a href="https://www.linkedin.com/in/josephar89" target="_blank" rel="noopener" class="rounded-md border border-stone-800 px-2.5 py-1 hover:border-amber-500/60 hover:text-white">LinkedIn</a>
+            <a href="https://www.youtube.com/@Fr.JosephArRa" target="_blank" rel="noopener" class="rounded-md border border-stone-800 px-2.5 py-1 hover:border-amber-500/60 hover:text-white">YouTube</a>
+            <a href="https://www.youtube.com/@Vetrisaipadal" target="_blank" rel="noopener" class="rounded-md border border-stone-800 px-2.5 py-1 hover:border-amber-500/60 hover:text-white">Vetrisaipadal</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-stone-900 py-4 text-center text-xs text-stone-500">
+        © {new Date().getFullYear()} Fr. Joseph Arputha Raj OFM Cap • Hosted on GitHub Pages
+      </div>
+    </footer>
+
+    <script is:inline>
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+    </script>
+  </body>
+</html>

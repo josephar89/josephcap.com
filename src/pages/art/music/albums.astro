@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import AlbumLyricsPlayer from "../../../components/react/AlbumLyricsPlayer.jsx";
+import albumsData from "../../../data/albums.json";
+---
+
+<BaseLayout
+  title="Original Musical Albums"
+  description="Over 50 original Tamil, English, and multilingual sacred compositions spanning 2010 to 2020."
+>
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="mb-8 border-b border-stone-800 pb-6">
+      <p class="text-xs font-bold uppercase tracking-widest text-amber-400">My Musical Anthology</p>
+      <h1 class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Original Compositions &amp; Albums</h1>
+      <p class="mt-2 max-w-2xl text-sm text-stone-400">
+        Seven archival eras from Vizhigalile (2010) and Novitiate Carnatic explorations to Francesco Theological Institute—complete with audio and Tamil lyrics.
+      </p>
+    </div>
+    <AlbumLyricsPlayer client:load albums={albumsData.albums} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const skills = [
+  "Generative AI Systems Integration",
+  "Film Direction & Cinematography",
+  "EdTech Logistics (50k+ Scale)",
+  "Audio Engineering & Stem Separation",
+  "Liturgical & Carnatic Composition",
+  "Digital Archiving & Databases",
+  "Applied Philosophy & Algorethics",
+];
+
+const education = [
+  { degree: "MA Cinema Arts & Audiovisual", school: "DBIMA, Paris", period: "2025 – 2027" },
+  { degree: "MSc Counseling & Psychotherapy", school: "Periyar University", period: "2023 – 2024" },
+  { degree: "Diploma in Sound Engineering", school: "Bridge Academy", period: "2022" },
+  { degree: "BA & MA English & MA History", school: "Annamalai University", period: "2014 – 2025" },
+  { degree: "Bachelor of Theology & Philosophy", school: "Ecclesial Studies", period: "2013 – 2020" },
+];
+
+const experience = [
+  {
+    role: "Global AI Educator & Workshop Facilitator",
+    org: "Independent Initiative",
+    period: "Apr 2025 – Present",
+    bullets: [
+      "Designed and facilitated a global AI literacy initiative, conducting 15+ specialized AI workshops across India, France, Italy, and Cameroon.",
+      "Tailored Train-the-Trainer curriculums for PhD scholars, school educators, media students, and international religious leaders.",
+    ],
+  },
+  {
+    role: "Digital Communications & Web Admin",
+    org: "Amala Annai Capuchin Province",
+    period: "May 2020 – Present",
+    bullets: [
+      "Engineered AI-assisted audio pipelines (vocal isolation, stem separation) to mass-scale 600+ Tamil tracks for Vetrisaipadal, achieving 25,000+ views.",
+      "Architected the Malayadipatty Digital Archive, digitizing 350 years of mission history into a structured online repository.",
+    ],
+  },
+  {
+    role: "Provincial Secretary (Digital Transformation)",
+    org: "Order of Friars Minor Capuchin",
+    period: "Apr 2023 – Dec 2024",
+    bullets: [
+      "Led end-to-end modernization of legacy administrative records, digitizing and logically indexing over 50,000 pages into a secure cloud system.",
+      "Oversaw physical construction of a modern archive facility with high-density shelving.",
+    ],
+  },
+  {
+    role: "EdTech Operations & Logistics Lead",
+    org: "Thalir Holistic Welfare Centre",
+    period: "Oct 2020 – Dec 2021",
+    bullets: [
+      "Co-spearheaded crisis-era digital transformation, engineering backend infrastructure for 60+ online courses.",
+      "Onboarded and managed databases for over 50,000 global participants with zero-downtime under heavy traffic.",
+    ],
+  },
+];
+
+const certifications = [
+  "Google Prompting Essentials (Coursera)",
+  "Google AI Essentials (Coursera)",
+  "IICT AI Skills House Scholar",
+  "Gen AI: Beyond the Chatbot",
+];
+---
+
+<BaseLayout title="About Me & CV">
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Profile Header Card -->
+    <div class="rounded-3xl border border-stone-800 bg-stone-900/70 p-6 sm:p-10">
+      <div class="grid items-center gap-8 md:grid-cols-12">
+        <div class="md:col-span-3">
+          <img
+            src="https://lh3.googleusercontent.com/d/18b7YL8GrrE3I6N0_jLuO57xWiHlrjN3j"
+            alt="Fr. Joseph Arputha Raj V"
+            class="mx-auto h-44 w-44 rounded-2xl border-2 border-amber-500/40 object-cover shadow-xl"
+          />
+        </div>
+        <div class="md:col-span-9">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">
+            AI Integration Specialist • Filmmaker • Capuchin Priest
+          </p>
+          <h1 class="mt-1 text-3xl font-extrabold text-white sm:text-4xl">
+            Joseph Arputha Raj V
+          </h1>
+          <p class="mt-4 text-sm leading-relaxed text-stone-300">
+            A modern Capuchin missionary, filmmaker, and Master AI Trainer candidate dedicated to
+            bridging traditional storytelling and Generative AI. With 14 years of theological formation,
+            experience managing EdTech logistics for 50,000+ users, and leading digital migrations, I
+            empower individuals and institutions to harness AI ethically for impactful communication.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3 text-xs text-stone-300">
+            <span class="rounded-lg border border-stone-800 bg-stone-950 px-3 py-1.5">Paris, FR / Tamil Nadu, IN</span>
+            <a href="mailto:josephar89@gmail.com" class="rounded-lg border border-stone-800 bg-stone-950 px-3 py-1.5 hover:border-amber-500/60">josephar89@gmail.com</a>
+            <a href="tel:+918637668430" class="rounded-lg border border-stone-800 bg-stone-950 px-3 py-1.5 hover:border-amber-500/60">+91 86376 68430</a>
+            <a href="https://www.linkedin.com/in/josephar89" target="_blank" rel="noopener" class="rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-1.5 font-semibold text-amber-300 hover:bg-amber-500 hover:text-stone-950">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-12">
+      <!-- Left Column: Skills, Education, Certs -->
+      <div class="space-y-8 lg:col-span-4">
+        <section class="rounded-2xl border border-stone-800 bg-stone-900/50 p-6">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-400">Core Skills</h2>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {skills.map((s) => (
+              <span class="rounded-lg border border-stone-700/80 bg-stone-950 px-3 py-1.5 text-xs font-medium text-stone-200">
+                {s}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-stone-800 bg-stone-900/50 p-6">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-400">Education Stack</h2>
+          <div class="mt-4 space-y-4">
+            {education.map((edu) => (
+              <div class="border-l-2 border-amber-500/40 pl-3.5">
+                <p class="text-sm font-semibold text-white">{edu.degree}</p>
+                <p class="text-xs text-stone-400">{edu.school}</p>
+                <p class="text-[11px] font-medium text-amber-400/80">{edu.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-stone-800 bg-stone-900/50 p-6">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-400">IICT &amp; Google Certifications</h2>
+          <ul class="mt-4 space-y-2.5 text-xs text-stone-300">
+            {certifications.map((c) => (
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400">✓</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+
+      <!-- Right Column: High-Impact Experience -->
+      <div class="space-y-6 lg:col-span-8">
+        <h2 class="text-xl font-bold text-white">High-Impact Experience</h2>
+        {experience.map((job) => (
+          <article class="rounded-2xl border border-stone-800 bg-stone-900/50 p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">{job.role}</h3>
+                <p class="text-sm font-medium text-amber-400">{job.org}</p>
+              </div>
+              <span class="rounded-full border border-stone-700 bg-stone-950 px-3 py-1 text-xs text-stone-300">
+                {job.period}
+              </span>
+            </div>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-stone-300">
+              {job.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

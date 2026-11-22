@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CinemaPortfolio from "../../components/react/CinemaPortfolio.jsx";
+import filmsData from "../../data/films.json";
+
+const earlyFilms = [
+  { title: "Short Film - 1 (St. Xavier's Primary School)", year: "2009", youtubeId: "HDToqa5AGwo" },
+  { title: "Short Film - 2 (MBA Project Film)", year: "2009", youtubeId: "iAGsDwDq8Xo" },
+];
+---
+
+<BaseLayout
+  title="DBIMA Paris Cinema Portfolio"
+  description="Digital Parables — Short films and Hybrid AI cinematography by Fr. Joseph Arputha Raj at DBIMA Paris."
+>
+  <div class="mx-auto max-w-7xl space-y-16 px-4 py-10 sm:px-6 lg:px-8">
+    <div>
+      <div class="mb-8 border-b border-stone-800 pb-6">
+        <p class="text-xs font-bold uppercase tracking-widest text-amber-400">MA Cinema Arts &amp; Audiovisual • DBIMA Paris</p>
+        <h1 class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Digital Parables | Film Portfolio</h1>
+        <p class="mt-2 max-w-2xl text-sm text-stone-400">
+          Click any film poster to launch the screening modal, read director&apos;s notes, and inspect the Hybrid AI production pipeline.
+        </p>
+      </div>
+      <CinemaPortfolio client:load films={filmsData.dbimaFilms} />
+    </div>
+
+    <!-- Early Archives (2009) -->
+    <div>
+      <h2 class="mb-6 text-xl font-bold text-white">Early Short Film Archives (2009)</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {earlyFilms.map((f) => (
+          <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/60">
+            <div class="aspect-video w-full bg-black">
+              <iframe
+                class="h-full w-full"
+                src={`https://www.youtube.com/embed/${f.youtubeId}`}
+                title={f.title}
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
+            <div class="p-4">
+              <p class="text-xs font-semibold text-amber-400">{f.year}</p>
+              <h3 class="text-sm font-bold text-white">{f.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
